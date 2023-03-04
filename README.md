@@ -1,9 +1,9 @@
 # Laboratorio 1 - Robótica Industrial
 
-Grupo conformado por:
-__Valentina Hernandez
-__Manuel Alejandro Rojas
-__Luis Felipe Gutierrez
+Grupo conformado por: <br>
+__Valentina Hernandez__ <br>
+__Manuel Alejandro Rojas__ <br>
+__Luis Felipe Gutierrez__ <br>
 
 ## Diseño de la herramienta
 
