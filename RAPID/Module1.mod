@@ -1,6 +1,6 @@
 MODULE Module1
 	TASK PERS tooldata lab1_tool_t1:=[TRUE,[[0,0,0],[1,0,0,0]],[-1,[0,0,0],[1,0,0,0],0,0,0]];
-    CONST robtarget AInicio:=[[0,-225.593,-100],[1,0,0,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget AInicio:=[[-176.185998195,-371.405,-549.410082335],[0.866025404,0,-0.5,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget FTarget_10:=[[0,-225.593,0],[1,0,0,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget FTarget_20:=[[0,-209.44,0],[1,0,0,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
     CONST robtarget FTarget_30:=[[-80,-209.44,0],[1,0,0,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
@@ -141,9 +141,9 @@ MODULE Module1
         MoveL ZInicio,v100,z10,Tooldata_MARCADOR\WObj:=Workobject_INICIALES;
     ENDPROC
     PROC Home()
-        MoveL Target_30,v1000,z100,Tooldata_MARCADOR\WObj:=Workobject_INICIALES;
+        MoveJ Target_30,v1000,z100,Tooldata_MARCADOR\WObj:=Workobject_INICIALES;
     ENDPROC
     PROC Close()
-        MoveL AInicio,v100,z10,Tooldata_MARCADOR\WObj:=Workobject_INICIALES;
+        MoveJ AInicio,v100,z10,Tooldata_MARCADOR\WObj:=Workobject_INICIALES;
     ENDPROC
 ENDMODULE
