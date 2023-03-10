@@ -37,6 +37,8 @@ Con esto, en el procedimiento principal, se tenían tres instrucciones. La prime
 
 ## Simulación en RobotStudio
 
+![Simulación en RobotStudio](/Multimedia/Lab1_Simulación.mp4)
+
 ## Implementación de la práctica con los robots IRB140
 
 Primero se realizó la carga del programa en RAPID al controlador del robot. Dado que el tablero en el cual se iba a realizar el dibujo tenía una distancia e inclinación distinta a la del Work Object utilizado en la simulación, se modificó manualmente este Work Object con un offset para alcanzar la posición del tablero requerida. Una vez hecho esto, se realizó el dibujado de las letras en el cuadrante **_x(+)_** y **_y(+)_**.
