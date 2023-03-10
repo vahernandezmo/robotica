@@ -29,21 +29,21 @@ Los archivos CAD de los modelos realizados se encuentrán en la carpeta CAD y el
 
 ## Solución planteada
 
-Para generar las trayectorias necesarias para dibujar las iniciales, primero se realizó un modelo de estas en Fusion 360, con una altura de 10 cm para cada letra. Posteriormente, se incluyó este modelo en la simulación de RobotStudio. Se utilizó el plano de la base del robot como Work Object. De esta manera, se generaron dos trayectorias: __Close__ y __Letters__. La primera, correspondía a la ubicación de la herramienta en un punto cercano al Work Object, utilizando el tipo de movimiento articular (MoveJ). La segunda corresponde a la trayectoria de las letras.
+Se realizo el proceso de configuración e inserción del controlador y el manipulador a la plataforma RobotStudio, para posteriormente realizar creación, ubicación y alineación de la herramienta con la posición de el portaherramienta del manipulador.
 
-Para generar la segunda, se generaron cada uno de los puntos correspondientes a las esquinas de cada letra en orden de izquierda a derecha, esto debido a que las letras se encontraban en el cuadrante x(+) y(+) con respecto al sistema de referencia del robot. Una vez generadas estos puntos se agregaron a la trayectoria con nombre Letters, y usando el tipo de movimiento linear (MoveL). 
+Para generar las trayectorias necesarias para dibujar las iniciales, primero se realizó un modelo de estas en Fusion 360, con una altura de 10 mm para cada letra. Posteriormente, se incluyó este modelo en la simulación de RobotStudio. Se utilizó un extremo de las letras modeladas sobre el plano de la base del robot como Work Object. De esta manera, se generaron dos trayectorias: __Close__ y __Letters__. La primera, correspondía a la ubicación de la herramienta en un punto cercano a la zona de trabajo, utilizando el tipo de movimiento articular (MoveJ). La segunda corresponde a la trayectoria de las letras.
 
-Con esto, en el procedimiento principal, se tenían tres instrucciones. La primera, acercarse al Work Object con la instrucción Close. Posteriormente, iniciar el dibujado de las letras con la instrucción Letters. Y por último, regresar al punto cercano con la instrucción Close.
+Para generar la segunda, se generaron cada uno de los puntos correspondientes a las esquinas de cada letra en orden de izquierda a derecha, esto debido a que las letras se encontraban en el cuadrante x(+) y(+) con respecto al sistema de referencia del robot. Una vez generadas, estos puntos se agregaron a la trayectoria con nombre Letters, y usando el tipo de movimiento linear (MoveL) con una velocidad de v100 mm/s y un zone de z10 mm . 
+
+Con esto, en el procedimiento principal, se tenían tres instrucciones. La primera, acercarse a la zona de trabajo con la instrucción Close. Posteriormente, iniciar el dibujado de las letras con la instrucción Letters. Y por último, regresar al punto cercano con la instrucción Close.
 
 ## Simulación en RobotStudio
-
-https://github.com/vahernandezmo/robotica_lab_1/blob/master/Multimedia/Lab1_Simulación.mp4
 
 ## Implementación de la práctica con los robots IRB140
 
 Primero se realizó la carga del programa en RAPID al controlador del robot. Dado que el tablero en el cual se iba a realizar el dibujo tenía una distancia e inclinación distinta a la del Work Object utilizado en la simulación, se modificó manualmente este Work Object con un offset para alcanzar la posición del tablero requerida. Una vez hecho esto, se realizó el dibujado de las letras en el cuadrante **_x(+)_** y **_y(+)_**.
 
-Una vez realizado esto, se modificó nuevamente el Work Object para dibujar en el cuadrante **_x(+)_** y **_y(-)_**. 
+Posteriormente, se modificó nuevamente el Work Object para dibujar en el cuadrante **_x(+)_** y **_y(-)_**. 
 
 A continuación, se muestran los vídeos de ambos procedimientos.
 
