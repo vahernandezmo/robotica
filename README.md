@@ -31,25 +31,25 @@ Los archivos CAD de los modelos realizados se encuentrán en la carpeta CAD y el
 
 Se realizo el proceso de configuración e inserción del controlador y el manipulador a la plataforma RobotStudio, para posteriormente realizar creación, ubicación y alineación de la herramienta con la posición de el portaherramienta del manipulador.
 
-Para generar las trayectorias necesarias para dibujar las iniciales, primero se realizó un modelo de estas en Fusion 360, con una altura de 100 mm para cada letra. Posteriormente, se incluyó este modelo en la simulación de RobotStudio. Se utilizó un extremo de las letras modeladas sobre el plano de la base del robot como Work Object. De esta manera, se generaron dos trayectorias: __Close__ y __Letters__. La primera, correspondía a la ubicación de la herramienta en un punto cercano a la zona de trabajo, utilizando el tipo de movimiento articular (MoveJ). La segunda corresponde a la trayectoria de las letras.
-
-Para generar la segunda, se generaron cada uno de los puntos correspondientes a las esquinas de cada letra en orden de derecha a izquierda, esto debido a que las letras se encontraban en el cuadrante x(+) y(+) con respecto al sistema de referencia del robot. Una vez generadas, estos puntos se agregaron a la trayectoria con nombre Letters, y usando el tipo de movimiento linear (MoveL) con una velocidad de v100 mm/s y un zone de z10 mm . 
-
-Con esto, en el procedimiento principal, se tenían tres instrucciones. La primera, acercarse a la zona de trabajo con la instrucción Close. Posteriormente, iniciar el dibujado de las letras con la instrucción Letters. Y por último, regresar al punto cercano con la instrucción Close.
-
-## Simulación en RobotStudio
-
 <div>
 <p align = 'center'>
 <img src="/Multimedia/Manipulador.png" alt="Manipulador con herramienta" width="600px">
 </p>
 </div>
 
+Para generar las trayectorias necesarias para dibujar las iniciales, primero se realizó un modelo de estas en Fusion 360, con una altura de 100 mm para cada letra. Posteriormente, se incluyó este modelo en la simulación de RobotStudio. Se utilizó un extremo de las letras modeladas sobre el plano de la base del robot como Work Object. De esta manera, se generaron dos trayectorias: __Close__ y __Letters__. La primera, correspondía a la ubicación de la herramienta en un punto cercano a la zona de trabajo, utilizando el tipo de movimiento articular (MoveJ). La segunda corresponde a la trayectoria de las letras.
+
+Para generar la segunda, se generaron cada uno de los puntos correspondientes a las esquinas de cada letra en orden de derecha a izquierda, esto debido a que las letras se encontraban en el cuadrante x(+) y(+) con respecto al sistema de referencia del robot. Una vez generadas, estos puntos se agregaron a la trayectoria con nombre Letters, y usando el tipo de movimiento linear (MoveL) con una velocidad de v100 mm/s y un zone de z10 mm . 
+
 <div>
 <p align = 'center'>
 <img src="/Multimedia/Trayectoria.png" alt="Manipulador en un punto de la trayectoria" width="600px">
 </p>
 </div>
+
+Con esto, en el procedimiento principal, se tenían tres instrucciones. La primera, acercarse a la zona de trabajo con la instrucción Close. Posteriormente, iniciar el dibujado de las letras con la instrucción Letters. Y por último, regresar al punto cercano con la instrucción Close.
+
+## Simulación en RobotStudio
 
 https://user-images.githubusercontent.com/14100413/224221766-ba36c607-135d-498e-b054-98ed3d4e536c.mp4
 
