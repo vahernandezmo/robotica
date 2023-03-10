@@ -37,12 +37,7 @@ Con esto, en el procedimiento principal, se tenían tres instrucciones. La prime
 
 ## Simulación en RobotStudio
 
-<div>
-<video width="320" height="240" controls>
-  <source src="/Multimedia/Lab1_Simulación.mp4" type="video/mp4">
-Simulación en RobotStudio
-</video>
-<div>
+https://github.com/vahernandezmo/robotica_lab_1/blob/master/Multimedia/Lab1_Simulación.mp4
 
 ## Implementación de la práctica con los robots IRB140
 
