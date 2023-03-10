@@ -51,7 +51,14 @@ Con esto, en el procedimiento principal, se tenían tres instrucciones. La prime
 
 ## Simulación en RobotStudio
 
+Simulación de la trayectoria ejecutada por el robot ABB IRB140 en el plano x(+) y y(+) con respecto al sistema coordenado universal.
+
 https://user-images.githubusercontent.com/14100413/224221766-ba36c607-135d-498e-b054-98ed3d4e536c.mp4
+
+Simulación de la trayectoria ejecutada por el robot ABB IRB140 en el espacio de trabajo x(+) y y(-) y con una inclinación con respecto al eje "y" del sistema coordenado del objeto de trabajo.
+
+https://user-images.githubusercontent.com/14100413/224358478-631d7671-821c-4168-9047-ab312bcd1e5f.mp4
+
 
 ## Implementación de la práctica con los robots IRB140
 
