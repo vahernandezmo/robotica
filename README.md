@@ -17,6 +17,7 @@ En Fusion 360 también se desarrollo un modelo con las iniciales de los nombres 
 
 Los archivos CAD de los modelos realizados se encuentrán en la carpeta CAD y el archivo PDF del cual se tomaron las especificaciones dimensionales se encuentra en la carpeta principal de Laboratorio 1 con el nombre [ABB.pdf](/Documentos/ABB.pdf)
 
+![CAD de la Herramienta](/Multimedia/Herramienta_CAD.png "Herramienta Diseñada")
 
 ## Solución planteada
 
