@@ -39,6 +39,18 @@ Con esto, en el procedimiento principal, se tenían tres instrucciones. La prime
 
 ## Simulación en RobotStudio
 
+<div>
+<p align = 'center'>
+<img src="/Multimedia/Manipulador.png" alt="Manipulador con herramienta" width="600px">
+</p>
+</div>
+
+<div>
+<p align = 'center'>
+<img src="/Multimedia/Trayectoria.png" alt="Manipulador en un punto de la trayectoria" width="600px">
+</p>
+</div>
+
 https://user-images.githubusercontent.com/14100413/224221766-ba36c607-135d-498e-b054-98ed3d4e536c.mp4
 
 ## Implementación de la práctica con los robots IRB140
