@@ -41,4 +41,8 @@ A continuación, se muestran los vídeos de ambos procedimientos.
 
 ### Dibujo en el cuadrante **_x(+)_** y **_y(+)_**.
 
+![Video de operación y dibujo de iniciales en el cuadrante x(+) y y(+)](/Multimedia/Iniciales_Cuadrante_posXposY.mp4 "Video de operación y dibujo de iniciales en el cuadrante x(+) y y(+)")
+
 ### Dibujo en el cuadrante **_x(+)_** y **_y(-)_**. 
+
+![Video de operación y dibujo de iniciales en el cuadrante x(+) y y(-)](/Multimedia/Iniciales_Cuadrante_posXnegY.mp4 "Video de operación y dibujo de iniciales en el cuadrante x(+) y y(-)")
