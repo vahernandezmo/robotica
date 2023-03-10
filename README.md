@@ -16,3 +16,8 @@ Gracias a que uno de los integrantes del equipo se encuentra realizando un proce
 En Fusion 360 también se desarrollo un modelo con las iniciales de los nombres de los integrantes para facilitar la realización de las trayectorias en el software RobotStudio.
 
 Los archivos CAD de los modelos realizados se encuentrán en la carpeta CAD y el archivo PDF del cual se tomaron las especificaciones dimensionales se encuentra en la carpeta principal de Laboratorio 1 con el nombre [ABB.pdf](/Documentos/ABB.pdf)
+
+
+## Solución planteada
+
+Para generar las trayectorias necesarias para dibujar las iniciales, primero se realizó un modelo de estas en Fusion 360, con una altura de 10 cm para cada letra. Posteriormente, se incluyó este modelo en la simulación de Robot Studio. Se utilizó el plano de la base del robot como Work Object. De esta manera, se generaron dos trayectorias: __Close y Letters__. La primera, correspondía a la ubicación de la herramienta en un punto cercano al WorkObject. La segunda
