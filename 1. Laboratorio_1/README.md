@@ -11,7 +11,7 @@ Para el desarrollo de la herramienta se hizo primero una indagación en la docum
 
 Mediante el uso de un calibrador se realizó un modelado de medidas reales representativas del marcador a utilizar en la realidad, este permitió desarrollar un modelo CAD de la herramienta de manera precisa en el software FUSION 360. La herramienta se dividió en 2 partes, un soporte fijo a la base portaherramientas con un eje de guia en las primeras espiras del resorte alineado a 30° respecto respecto al eje z de el portaherramientas y una guia cilindrica que permite al marcador una limitada libertad en la dirección axial del eje ya que el marcador se encuentra solidario al resorte y este a su vez a la base.
 
-![CAD de la Herramienta](/Multimedia/Herramienta_CAD.png "Herramienta Diseñada")
+![CAD de la Herramienta](./Multimedia/Herramienta_CAD.png "Herramienta Diseñada")
 
 Gracias a que uno de los integrantes del equipo se encuentra realizando un proceso de pasantia con el Centro Técnologico de Innovación Aeronáutica de la Fuerza Aérea Colombiana, se pudieron realizar la impresiones 3D de las piezas en ONYX, un excelente material de impresión propio de la reconocida marca MARKFORGED. Agradecimientos a ellos por el apoyo.
 
