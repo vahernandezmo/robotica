@@ -15,8 +15,11 @@ Mediante el uso de un calibrador se realizó un modelado de medidas reales repre
 
 Gracias a que uno de los integrantes del equipo se encuentra realizando un proceso de pasantia con el Centro Técnologico de Innovación Aeronáutica de la Fuerza Aérea Colombiana, se pudieron realizar la impresiones 3D de las piezas en ONYX, un excelente material de impresión propio de la reconocida marca MARKFORGED. Agradecimientos a ellos por el apoyo.
 
-![Ensamble de la Herramienta](./Multimedia/Herramienta.jpg "Ensamble herramienta de trabajo")
-
+<div>
+<p align = 'center'>
+<img src="/Multimedia/Herramienta.jpg" alt="Ensamble herramienta de trabajo" width="600px">
+</p>
+</div>
 
 En Fusion 360 también se desarrollo un modelo con las iniciales de los nombres de los integrantes para facilitar la realización de las trayectorias en el software RobotStudio.
 
