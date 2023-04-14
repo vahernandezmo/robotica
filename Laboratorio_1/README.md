@@ -15,11 +15,8 @@ Mediante el uso de un calibrador se realizó un modelado de medidas reales repre
 
 Gracias a que uno de los integrantes del equipo se encuentra realizando un proceso de pasantia con el Centro Técnologico de Innovación Aeronáutica de la Fuerza Aérea Colombiana, se pudieron realizar la impresiones 3D de las piezas en ONYX, un excelente material de impresión propio de la reconocida marca MARKFORGED. Agradecimientos a ellos por el apoyo.
 
-<div>
-<p align = 'center'>
-<img src="./Multimedia/Herramienta.jpg" alt="Ensamble herramienta de trabajo" width="300px">
-</p>
-</div>
+![Ensamble de la Herramienta](./Multimedia/Herramienta.jpg "Ensamble herramienta de trabajo")
+
 
 En Fusion 360 también se desarrollo un modelo con las iniciales de los nombres de los integrantes para facilitar la realización de las trayectorias en el software RobotStudio.
 
@@ -31,11 +28,7 @@ Los archivos CAD de los modelos realizados se encuentrán en la carpeta CAD y el
 
 Se realizo el proceso de configuración e inserción del controlador y el manipulador a la plataforma RobotStudio, para posteriormente realizar creación, ubicación y alineación de la herramienta con la posición de el portaherramienta del manipulador.
 
-<div>
-<p align = 'center'>
-<img src="./Multimedia/Manipulador.png" alt="Manipulador con herramienta" width="600px">
-</p>
-</div>
+![Manipulador con herramienta](./Multimedia/Manipulador.png "Manipulador con herramienta")
 
 Para generar las trayectorias necesarias para dibujar las iniciales, primero se realizó un modelo de estas en Fusion 360, con una altura de 100 mm para cada letra. Posteriormente, se incluyó este modelo en la simulación de RobotStudio. Se utilizó un extremo de las letras modeladas sobre el plano de la base del robot como Work Object. De esta manera, se generaron dos trayectorias: __Close__ y __Letters__. La primera, correspondía a la ubicación de la herramienta en un punto cercano a la zona de trabajo, utilizando el tipo de movimiento articular (MoveJ). La segunda corresponde a la trayectoria de las letras.
 
