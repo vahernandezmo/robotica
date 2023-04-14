@@ -17,15 +17,15 @@ Gracias a que uno de los integrantes del equipo se encuentra realizando un proce
 
 <div>
 <p align = 'center'>
-<img src="/Multimedia/Herramienta.jpg" alt="Ensamble herramienta de trabajo" width="300px">
+<img src="./Multimedia/Herramienta.jpg" alt="Ensamble herramienta de trabajo" width="300px">
 </p>
 </div>
 
 En Fusion 360 también se desarrollo un modelo con las iniciales de los nombres de los integrantes para facilitar la realización de las trayectorias en el software RobotStudio.
 
-![Modelo 3D de las iniciales](/Multimedia/Iniciales.png "Modelo 3D de las iniciales")
+![Modelo 3D de las iniciales](./Multimedia/Iniciales.png "Modelo 3D de las iniciales")
 
-Los archivos CAD de los modelos realizados se encuentrán en la carpeta CAD y el archivo PDF del cual se tomaron las especificaciones dimensionales se encuentra en la carpeta principal de Laboratorio 1 con el nombre [ABB.pdf](/Documentos/ABB.pdf)
+Los archivos CAD de los modelos realizados se encuentrán en la carpeta CAD y el archivo PDF del cual se tomaron las especificaciones dimensionales se encuentra en la carpeta principal de Laboratorio 1 con el nombre [ABB.pdf](./Documentos/ABB.pdf)
 
 ## Solución planteada
 
@@ -33,7 +33,7 @@ Se realizo el proceso de configuración e inserción del controlador y el manipu
 
 <div>
 <p align = 'center'>
-<img src="/Multimedia/Manipulador.png" alt="Manipulador con herramienta" width="600px">
+<img src="./Multimedia/Manipulador.png" alt="Manipulador con herramienta" width="600px">
 </p>
 </div>
 
@@ -43,7 +43,7 @@ Para generar la segunda, se generaron cada uno de los puntos correspondientes a 
 
 <div>
 <p align = 'center'>
-<img src="/Multimedia/Trayectoria.png" alt="Manipulador en un punto de la trayectoria" width="600px">
+<img src="./Multimedia/Trayectoria.png" alt="Manipulador en un punto de la trayectoria" width="600px">
 </p>
 </div>
 
