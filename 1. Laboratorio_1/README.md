@@ -33,7 +33,7 @@ Se realizo el proceso de configuración e inserción del controlador y el manipu
 
 <div>
 <p align = 'center'>
-<img src="./Multimedia/Manipulador.png" alt="Manipulador con herramienta" width="600px">
+<img src="/Multimedia/Manipulador.png" alt="Manipulador con herramienta" width="600px">
 </p>
 </div>
 
@@ -43,7 +43,7 @@ Para generar la segunda, se generaron cada uno de los puntos correspondientes a 
 
 <div>
 <p align = 'center'>
-<img src="./Multimedia/Trayectoria.png" alt="Manipulador en un punto de la trayectoria" width="600px">
+<img src="/Multimedia/Trayectoria.png" alt="Manipulador en un punto de la trayectoria" width="600px">
 </p>
 </div>
 
