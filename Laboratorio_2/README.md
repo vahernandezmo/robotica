@@ -20,3 +20,8 @@ utilizaron comandos de MoveJ y para la rutina de trabajo MoveL a una velocidad v
 Todo este procedimiento puede verse en el video de la simulación en el que se pueden 
 visualizar las entradas y salidas y su intervención en el desarrollo de toda la aplicación
 su activación y apagado segun lo indicado en el parrafo anterior.
+
+## Resultado
+
+https://user-images.githubusercontent.com/14100413/232258565-9e41a4ac-2939-4639-b38b-d1a157677eae.mp4
+
