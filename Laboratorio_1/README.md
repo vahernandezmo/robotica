@@ -17,7 +17,7 @@ Gracias a que uno de los integrantes del equipo se encuentra realizando un proce
 
 <div>
 <p align = 'center'>
-<img src="/Multimedia/Herramienta.jpg" alt="Ensamble herramienta de trabajo" width="600px">
+<img src="./Multimedia/Herramienta.jpg" alt="Ensamble herramienta de trabajo" width="600px">
 </p>
 </div>
 
