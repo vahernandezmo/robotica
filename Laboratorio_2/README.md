@@ -9,7 +9,7 @@ Manuel Rojas <br>
 
 Para el codigo se reutilizo parte del codigo del laboratorio 1 como rutina de trabajo de tal forma que se definieron unos puntos de aproximación a la rutina de trabajo para iniciar y finalizar. Además se crearon 2 entradas digitales y 2 salidas digitales que posteriomente se renombraron según el nombre indicado en el Flexpendant, denominadas DI_01, DI_02 y DO_03, del robot industrial del laboratorio del LABSIR. 
 
-![Configuración de señales en Robot Studio](./Multimedia/Manipulador.png "Configuración de señales en Robot Studio")
+![Configuración de señales en Robot Studio](./Multimedia/signal_config.png "Configuración de señales en Robot Studio")
 
 Se crearon una serie de trayectorias independientes con los puntos asociados del dibujo de letras, la posición de home y la posición de cambio de la herramienta. Posteriomente se agrupo en un path definido como 'main' en el que se agrupan todas las trayectorias con una serie instrucciones de espera de la activación de las entradas digitales que permitan realizar el inicio de la rutina de trabajo y el inicio del movimiento hacia la posición de cambio de herramienta. Tambien se realizo la definición de set y off para una salida digital que esta encendida desde el inicio de la rutina de trabajo hasta que se inicia la rutina de cambio de herramienta, momento en el cual su valor lógico pasa a cero. Para los movimientos a la posición de Home y herramienta se utilizaron comandos de MoveJ y para la rutina de trabajo MoveL a una velocidad v100. 
 
