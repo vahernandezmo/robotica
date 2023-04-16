@@ -23,5 +23,11 @@ su activación y apagado segun lo indicado en el parrafo anterior.
 
 ## Resultado
 
+El desarrollo del laboratorio empezó con la identificación de los nombres con los que el controlador del manipulador identificaba cada una de las entradas y salidas digitales provenientes de una botonera previamente cableada. Después de obtener esta información se procedió a escribir dichos identificadores dentro del código de RAPID para que fueran reconocidas dentro del código y posteriormente, al ser cargadas al Flex Pendant, estás fueron compatibles.
+
+Una serie de inconvenientes surgieron en cuanto a la transmisión del archivo de código de RobotSudio al Flex Pendant ya que la memoria USB no estaba siendo detectada por este último. Después del cambio a tres distintos dispositivos, finalmente se encontró la forma de transmitir el código para que fuera leído y cargado.
+
 https://user-images.githubusercontent.com/14100413/232258565-9e41a4ac-2939-4639-b38b-d1a157677eae.mp4
+
+En el video se puede observar, inmediatamente al empezar que se activa el primer botón para empezar con la secuencia de movimiento de arranque, esto a su vez ocasionó que la única salida digital configurada cambiara su estado a un “1“ lógico, evidenciado por la luz de color azul ubicada en la botonera del robot. Vale la pena mencionar que el desarrollo se realizó de manera secuencial paso a paso con ayuda de los botones del Flex Pendant por seguridad (en pruebas anteriores, una configuración del work Object errada ocasiono que la herramienta de trabajo sufriera daños en el marcador y en su soporte). En el segundo 56 se observa que el robot termina su primera secuencia de comandos y en el segundo 59 se presiona el botón 2 para iniciar con una segunda secuencia de movimiento; a la mitad del recorrido (minuto 1:22) se evidencia el cambio de estado en el led azul de la botonera, lo que indica que la única salida digital alterno al llegar al punto extremo asignado al robot por medio del código. Finalmente, el robot llega a la posición de Home como estaba previsto desde un principio. 
 
