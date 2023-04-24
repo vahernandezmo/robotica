@@ -38,6 +38,7 @@ Esto puede visualizarce en el video matlab_example.webm
 Ahora se crea un script para cubrir los otros puntos propuestos
 por la guia No.1
 ------------------------------------------------------------------
+```matlab
 clear
 clc
 %%
@@ -60,9 +61,12 @@ pause(1)
 H=sub.LatestMessage
 %%
 rosshutdown;
+```
 -------------------------------------------------------------------
 con el siguiente comando se creo el suscriber
+```matlab
 sub = rossubscriber('/turtle1/pose','turtlesim/Pose') 
+```
  y en H se almacena el ultimo mensaje obtenido.
  
  para modificar la pose de la tortuga se usa el mensaje creado en
