@@ -17,6 +17,7 @@ el que fue necesario instalar el toolbox de Robotica de Mathworks.
 
 Se probó el script de la guia de laboratorio.
 -----------------------------------------------------------------
+```matlab
 %%
 rosinit; %Conexión con nodo maestro
 %%
@@ -26,6 +27,7 @@ velMsg = rosmessage(velPub); %Creación de mensaje
 velMsg.Linear.X = 1; %Valor del mensaje
 send(velPub,velMsg); %Envio
 pause(1)
+```
 ------------------------------------------------------------------
 En este se inicia la conexión con el maestro, se cre un publisher
 y se envian mensajes con la velocidad para modificar la posición
