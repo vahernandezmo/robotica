@@ -29,6 +29,7 @@ Para la realización de operar Turtlesim mediante Matlab, para
 el que fue necesario instalar el toolbox de Robotica de Mathworks.
 
 Se probó el script de la guia de laboratorio.
+
 ---
 ```matlab
 %%
@@ -47,9 +48,11 @@ y se envian mensajes con la velocidad para modificar la posición
 en la dirección x.
 
 Esto puede visualizarce en el video matlab_example.webm
+
 ---
 Ahora se crea un script para cubrir los otros puntos propuestos
 por la guia No.1
+
 ---
 ```matlab
 clear
