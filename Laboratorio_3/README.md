@@ -28,8 +28,8 @@ angular:
 Para la realización de operar Turtlesim mediante Matlab, para
 el que fue necesario instalar el toolbox de Robotica de Mathworks.
 
-<p>Se probó el script de la guia de laboratorio.</p>
------------------------------------------------------------------
+Se probó el script de la guia de laboratorio.
+---
 ```matlab
 %%
 rosinit; %Conexión con nodo maestro
@@ -41,16 +41,16 @@ velMsg.Linear.X = 1; %Valor del mensaje
 send(velPub,velMsg); %Envio
 pause(1)
 ```
-------------------------------------------------------------------
+---
 En este se inicia la conexión con el maestro, se cre un publisher
 y se envian mensajes con la velocidad para modificar la posición
 en la dirección x.
 
 Esto puede visualizarce en el video matlab_example.webm
-------------------------------------------------------------------
+---
 Ahora se crea un script para cubrir los otros puntos propuestos
 por la guia No.1
-------------------------------------------------------------------
+---
 ```matlab
 clear
 clc
