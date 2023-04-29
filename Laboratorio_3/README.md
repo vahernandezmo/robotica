@@ -28,7 +28,7 @@ angular:
 Para la realización de operar Turtlesim mediante Matlab, para
 el que fue necesario instalar el toolbox de Robotica de Mathworks.
 
-Se probó el script de la guia de laboratorio.
+<p>Se probó el script de la guia de laboratorio.</p>
 -----------------------------------------------------------------
 ```matlab
 %%
