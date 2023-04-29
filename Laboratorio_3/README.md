@@ -6,10 +6,9 @@ https://github.com/fegonzalez7/rob_unal_clase2
 Este permitió configurar e instalar el programa de manera correcta 
 en los ordenadores de los integrantes del grupo.
 
-
-
-
-
+Como una primera aproximación se plantea desarrollar el ejercicio que emularía al “hola mundo” de los lenguajes de programación aplicado el entorno de desarrollo ROS, con el fin de familiarizarnos con sus características principales. Para ello, y después de haber instalado todos los programas pertinentes, clonamos en nuestro computador el repositorio https://github.com/felipeg17/hello_turtle.git dentro del directorio catkin_ws/src. En nuestro caso, decidimos instalar un entorno para la terminal de Linux llamado Kitty el cual nos permitió abrir cuatro terminales mostrados de forma simultanea. El directorio que se escoge para desarrollar el ejercicio no es aleatorio ya que la idea es ejecutar ROS mediante el compilador catkit.
+En una primera terminal se corre el comando “roscore” lo cual nos permite inicializar ROS y se le dice al sistema que una instancia de ROS se va a estar ejecutando. En la segunda terminal se le indica a esa instancia de ROS que se va a correr el programa de “turtlesim”, específicamente, un nodo que muestra mediante una interfaz gráfica la ubicación de una tortuga y que permanentemente esta enviando su ubicación y orientación; de por si hasta este punto no es posible interactuar con la tortuga. En la tercera terminal se ejecuta un nodo el cual es capaz de justamente esto, “turtle_teleop_key” permite registrar entradas de teclado para enviarle instrucciones de movimiento a la tortuga que se pueden ver mediante la interfaz gráfica. 
+Ya que la finalidad del laboratorio es realizar comunicaciones desde distintos programas (Python y Matlab) en este primer paso estas instrucciones son enviadas desde consola. Con todos los nodos, para este caso en particular activos, se envía una instrucción desde consola, enviando directamente un mensaje con instrucciones de movimiento para que la tortuga siga una trayectoria deseada. En la imagen siguiente se pueden visualizar las cuatro consolas de Linux abiertas y la interfaz gráfica con el movimiento de la tortuga indicado ya ejecutado. 
 
 ## Matlab: 
 Para la realización de operar Turtlesim mediante Matlab, para
