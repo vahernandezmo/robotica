@@ -251,7 +251,8 @@ Además, utilizando `rqt_graph` podemos visualizar el gráfo de ROS activo con n
 
 Por último, se muestra un vídeo del script:
 
-![myTeleopKey](./media/funcionamiento.mp4)
+https://user-images.githubusercontent.com/55969494/235333308-32cd1fa3-4fdc-42eb-aafd-000dbf1af166.mp4
+
 
 
 
