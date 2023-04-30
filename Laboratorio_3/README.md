@@ -239,8 +239,15 @@ Por último, inicializamos un nodo al que nombramos `my_teleop_key`, utilizamos 
 ```
 ### Resultados
 
+---
+
 En la siguiente imagen se puede evidenciar tres terminales: una con roscore activo, otra con el nodo de turtlesim activo y por último nuestro nodo `myTeleopKey`.
-![Terminales])
+![Terminales](./media/myTeleopKey.png)
+
+Además, utilizando `rqt_graph` podemos visualizar el gráfo de ROS activo con nuestro nodo y el nodo de turtlesim:
+
+![Terminales](./media/graph.png)
+
 ### Instrucciones de uso:
 
 
