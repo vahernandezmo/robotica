@@ -89,16 +89,13 @@ sub = rossubscriber('/turtle1/pose','turtlesim/Pose')
  rosshutdown
  
  El funcionamiento de esta comunicación y operación de la tortuga
- puede visualizarce en los videos de:
- - matlab1.webm
- [matlab1.webm](https://user-images.githubusercontent.com/55969494/235333344-91ec7afc-96be-42dc-8dd0-676171446e36.webm)
- - matlab2.webm 
- [matlab.webm](https://user-images.githubusercontent.com/55969494/235333351-e9faad24-bd44-4bdd-9f8b-927318466ed6.webm)
- - matlab3.webm
- [matlab3.webm](https://user-images.githubusercontent.com/55969494/235333348-b3b83c30-dfcf-40a1-8e20-5854fd88556e.webm)
-------------------------------------
+ puede visualizarce en los siguientes vídeos:
+ 
+ [matlab1.webm](https://user-images.githubusercontent.com/55969494/235333434-dc0dcf36-ffea-4bc4-89e8-4098249c9f5d.webm)
+ [matlab.webm](https://user-images.githubusercontent.com/55969494/235333436-d8e2cfb1-ede8-49f1-83dd-185c83fb4a4e.webm)
+[matlab3.webm](https://user-images.githubusercontent.com/55969494/235333440-8d2ac82c-eef5-43af-8a03-6291fd552352.webm)
 
- --------------------------
+--------------------------------------------------------------
  
  ## Python
  
