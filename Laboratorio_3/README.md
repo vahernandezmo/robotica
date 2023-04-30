@@ -248,6 +248,13 @@ Además, utilizando `rqt_graph` podemos visualizar el gráfo de ROS activo con n
 
 ![Terminales](./media/graph.png)
 
+Por último, se muestra un vídeo del script:
+
+<video width="320" height="240" controls>
+  <source src="./media/funcionamiento.mp4" type="video/mp4">
+</video>
+
+
 ### Instrucciones de uso:
 
 
