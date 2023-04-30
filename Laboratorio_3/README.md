@@ -1,5 +1,12 @@
 # Laboratorio 3
 
+Integrantes:
+Valentina Hernández
+Felipe Gutierrez
+Manuel Rojas
+
+---
+
 Para el desarrollo del laboratorio 3 se realizó un proceso siguiendo el repositorio creado por el Ing. Felipe Gonzales https://github.com/fegonzalez7/rob_unal_clase2. Este permitió configurar e instalar el programa de manera correcta en los ordenadores de los integrantes del grupo.
 
 Como una primera aproximación se plantea desarrollar el ejercicio que emularía al “hola mundo” de los lenguajes de programación aplicado el entorno de desarrollo ROS, con el fin de familiarizarnos con sus características principales. Para ello, y después de haber instalado todos los programas pertinentes, clonamos en nuestro computador el repositorio https://github.com/felipeg17/hello_turtle.git dentro del directorio catkin_ws/src. En nuestro caso, decidimos instalar un entorno para la terminal de Linux llamado Kitty el cual nos permitió abrir cuatro terminales mostrados de forma simultanea. El directorio que se escoge para desarrollar el ejercicio no es aleatorio ya que la idea es ejecutar ROS mediante el compilador catkin.
