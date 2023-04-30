@@ -117,7 +117,7 @@ teleport_ab = '/turtle1/teleport_absolute'
 teleport_rel = '/turtle1/teleport_relative'
 ```
 
-La función `getkey()`(obtenida en este enlace: [http://python4fun.blogspot.com/2008/06/get-key-press-in-python.html](http://python4fun.blogspot.com/2008/06/get-key-press-in-python.html)), se utiliza para capturar la tecla presionada por el usuario.
+La función `getkey()` (obtenida en este enlace: [http://python4fun.blogspot.com/2008/06/get-key-press-in-python.html](http://python4fun.blogspot.com/2008/06/get-key-press-in-python.html)), se utiliza para capturar la tecla presionada por el usuario.
 
 ```python
 def getkey():
@@ -237,6 +237,13 @@ Por último, inicializamos un nodo al que nombramos `my_teleop_key`, utilizamos 
     except rospy.ROSInterruptException:
             pass
 ```
+### Resultados
+
+En la siguiente imagen se puede evidenciar tres terminales: una con roscore activo, otra con el nodo de turtlesim activo y por último nuestro nodo `myTeleopKey`.
+![Terminales])
+### Instrucciones de uso:
+
+
 
 
 
