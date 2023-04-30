@@ -42,7 +42,9 @@ En este se inicia la conexión con el maestro, se crea un publisher
 y se envian mensajes con la velocidad para modificar la posición
 en la dirección x.
 
-Esto puede visualizarse en el video matlab_example.webm
+Esto puede visualizarse en el video matlab_example.webm:
+
+[matlab_example.webm](https://user-images.githubusercontent.com/55969494/235333335-7688c387-2ec4-4957-9ecb-7ca009e498fb.webm)
 
 ---
 Ahora se crea un script para cubrir los otros puntos propuestos por la guía:
@@ -89,9 +91,14 @@ sub = rossubscriber('/turtle1/pose','turtlesim/Pose')
  El funcionamiento de esta comunicación y operación de la tortuga
  puede visualizarce en los videos de:
  - matlab1.webm
- - matlab2.webm
+ [matlab1.webm](https://user-images.githubusercontent.com/55969494/235333344-91ec7afc-96be-42dc-8dd0-676171446e36.webm)
+ - matlab2.webm 
+ [matlab.webm](https://user-images.githubusercontent.com/55969494/235333351-e9faad24-bd44-4bdd-9f8b-927318466ed6.webm)
  - matlab3.webm
- --------------------------------------------------------------
+ [matlab3.webm](https://user-images.githubusercontent.com/55969494/235333348-b3b83c30-dfcf-40a1-8e20-5854fd88556e.webm)
+------------------------------------
+
+ --------------------------
  
  ## Python
  
