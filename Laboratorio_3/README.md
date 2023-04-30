@@ -1,8 +1,11 @@
 # Laboratorio 3
 
 Integrantes:
+<br>
 Valentina Hernández
+<br>
 Felipe Gutierrez
+<br>
 Manuel Rojas
 
 ---
