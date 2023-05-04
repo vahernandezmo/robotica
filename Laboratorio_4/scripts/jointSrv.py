@@ -21,6 +21,7 @@ def jointCommand(command, id_num, addr_name, value, time):
         return result.comm_result
     except rospy.ServiceException as exc:
         print(str(exc))
+        
 
 if __name__ == '__main__':
     try:
