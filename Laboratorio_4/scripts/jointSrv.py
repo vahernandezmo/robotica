@@ -23,14 +23,14 @@ def jointCommand(command, id_num, addr_name, value, time):
         print(str(exc))
 
 def poseRobot(t1,t2,t3,t4,t5=0):
-        t1=min([t1,])
-        t1=max([t1,])
-        t2=min([t2,])
-        t2=max([t2,])
-        t3=min([t3,])
-        t3=max([t3,])
-        t4=min([t4,])
-        t4=max([t4,])
+        #t1=min([t1,])
+        #t1=max([t1,])
+        #t2=min([t2,])
+        #t2=max([t2,])
+        #t3=min([t3,])
+        #t3=max([t3,])
+        #t4=min([t4,])
+        #t4=max([t4,])
         
         jointCommand('', 1, 'Goal_Position', 150+t1, 0.5)
         time.sleep(2)
