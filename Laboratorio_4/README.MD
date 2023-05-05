@@ -17,13 +17,9 @@
 
 Se utlizo un calibrador pie de rey para hacer la medición de cada una de las distancias de los eslabones del robot.
 
-
 Una vez medidos los eslabones se procedio ubicar cada una de los sistemas coordenados para obtener los parametros de DH.
 
-
 finalmente para obtener nuestra posición de Home seleccionada se utilizaron unas posiciones de offset.
-
-
 
 |i  | tetha (°)| d (mm)| a(mm)| alpha (°)| offset |
 |---|----------|-------|------|----------|--------|
@@ -42,10 +38,31 @@ Donde:
 
 Posteriormente se realiza un un plot de esta posición de home desde el entorno de Matlab
 
+De esta misma forma se realiza la intancia de un robot mediante serial link y se realiza la configuración de cada una de las posiciones esto se puede encontrar en el archivo de matlab toolbox.mlx. Se definió tambien la orientación del NOA respecto al ultimo eje de coordenadas.
+
+1. 0, 0, 0, 0, 0.
 
 
 
+2. -25, 15, -20, 20, 0.
 
+
+
+3. 35,-35, 30, -30, 0.
+
+
+
+4. -85, 20, -55, 17, 0.
+
+
+
+5. -80, 35, -55, 45, 0.
+
+
+
+Finalmente se le solicita mediante el metodo trchain() la orientación y posición que tendría el NOA para una determinada configuración de las articulaciones q1,q2,q3,q4,q5,q6. Esto incluye una serie de rotaciones puras y traslaciones puras que permiten dermirminar dicha pose. 
+
+NOA=Rz(q1)Tz(4)Rx(90)Rz(q2)Tx(10.5)Rz(q3)Tx(10.5)Rz(q4)Tx(6.5)
 
 
 
