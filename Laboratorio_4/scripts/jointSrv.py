@@ -23,13 +23,52 @@ def jointCommand(command, id_num, addr_name, value, time):
         print(str(exc))
         
 
+def ang2bit(t):
+    return int(round(t*1023/(300),0))
+
+def poseRobot(t1,t2,t3,t4,t5=0):
+        t1=ang2bit(t1)
+        t2=ang2bit(t2)
+        t3=ang2bit(t3)
+        t4=ang2bit(t4)
+        t5=ang2bit(t5)
+
+        jointCommand('', 1, 'Goal_Position', 511+t1, 0.5)
+        time.sleep(2)
+        jointCommand('', 2, 'Goal_Position', 511+t2, 0.5)
+        time.sleep(2)
+        jointCommand('', 3, 'Goal_Position', 239+t3, 0.5)
+        time.sleep(2)
+        jointCommand('', 4, 'Goal_Position', 511+t4, 0.5)
+        time.sleep(2)
+        jointCommand('', 4, 'Goal_Position', 511+t5, 0.5)
+        time.sleep(2)
+        
 if __name__ == '__main__':
     try:
         # Goal_Position (0,1023)
         # Torque_Limit (0,1023)
         # jointCommand('', 1, 'Torque_Limit', 400)
-        jointCommand('', 1, 'Goal_Position', 250, 0.5)
-        time.sleep(0.5)
-        jointCommand('', 2, 'Goal_Position', 500, 0.5)
+        valor=input(f'''Ingrese la pose a la que desea ir:
+        1. Home [0, 0, 0, 0, 0]
+        2. P1   [-25, 15, -20, 20, 0]
+        3. P2   [ 35,-35, 30, -30, 0]
+        4. P3   [-85, 20, -55, 17, 0]
+        5. P4   [-80, 35, -55, 45, 0]
+        ''')
+        match valor:
+            case 1:
+                poseRobot(0, 0, 0, 0, 0)
+            case 2:
+                poseRobot(-25, 15, -20, 20, 0)
+            case 3:
+                poseRobot(35,-35, 30, -30, 0)
+            case 4:
+                poseRobot(-85, 20, -55, 17, 0)
+            case 5:
+                poseRobot(-80, 35, -55, 45, 0)
+            case _:
+                poseRobot(-80, 35, -55, 45, 0)
+
     except rospy.ROSInterruptException:
         pass
