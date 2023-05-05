@@ -22,25 +22,25 @@ def jointCommand(command, id_num, addr_name, value, time):
     except rospy.ServiceException as exc:
         print(str(exc))
 
+def ang2bit(t):
+    return int(round(t*1023/(300),0))
+
 def poseRobot(t1,t2,t3,t4,t5=0):
-        #t1=min([t1,])
-        #t1=max([t1,])
-        #t2=min([t2,])
-        #t2=max([t2,])
-        #t3=min([t3,])
-        #t3=max([t3,])
-        #t4=min([t4,])
-        #t4=max([t4,])
-        
-        jointCommand('', 1, 'Goal_Position', 150+t1, 0.5)
+        t1=ang2bit(t1)
+        t2=ang2bit(t2)
+        t3=ang2bit(t3)
+        t4=ang2bit(t4)
+        t5=ang2bit(t5)
+
+        jointCommand('', 1, 'Goal_Position', 511+t1, 0.5)
         time.sleep(2)
-        jointCommand('', 2, 'Goal_Position', 150+t2, 0.5)
+        jointCommand('', 2, 'Goal_Position', 511+t2, 0.5)
         time.sleep(2)
-        jointCommand('', 3, 'Goal_Position', 70+t3, 0.5)
+        jointCommand('', 3, 'Goal_Position', 239+t3, 0.5)
         time.sleep(2)
-        jointCommand('', 4, 'Goal_Position', 150+t4, 0.5)
+        jointCommand('', 4, 'Goal_Position', 511+t4, 0.5)
         time.sleep(2)
-        jointCommand('', 4, 'Goal_Position', 150+t5, 0.5)
+        jointCommand('', 4, 'Goal_Position', 511+t5, 0.5)
         time.sleep(2)
         
 if __name__ == '__main__':
