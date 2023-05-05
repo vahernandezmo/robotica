@@ -30,7 +30,7 @@ def ang2bit(t):
     return int(round(t*1023/(300), 0))
 
 
-def poseRobot(t1, t2, t3, t4, t5=0, time = 0.5):
+def poseRobot(t1, t2, t3, t4, t5=0, ts = 0.5):
     t1 = ang2bit(t1)
     t2 = ang2bit(t2)
     t3 = ang2bit(t3)
@@ -38,15 +38,15 @@ def poseRobot(t1, t2, t3, t4, t5=0, time = 0.5):
     t5 = ang2bit(t5)
 
     jointCommand('', 1, 'Goal_Position', 511+t1, 0.5)
-    time.sleep(time)
+    time.sleep(ts)
     jointCommand('', 2, 'Goal_Position', 511+t2, 0.5)
-    time.sleep(time)
+    time.sleep(ts)
     jointCommand('', 3, 'Goal_Position', 239+t3, 0.5)
-    time.sleep(time)
+    time.sleep(ts)
     jointCommand('', 4, 'Goal_Position', 511+t4, 0.5)
-    time.sleep(time)
+    time.sleep(ts)
     jointCommand('', 5, 'Goal_Position', 511+t5, 0.5)
-    time.sleep(time)
+    time.sleep(ts)
 
 
 if __name__ == '__main__':
