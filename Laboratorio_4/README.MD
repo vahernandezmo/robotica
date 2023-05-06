@@ -11,10 +11,14 @@
 - Crear todos los Joint Controllers con ROS para manipular servomotores Dynamixel AX-12 del robot Phantom X Pincher.
 - Manipular los tópicos de estado y comando para todos los Joint Controllers del robot Phantom X Pincher.
 - Manipular los servicios para todos los Joint Controllers del robot Phantom X Pincher.
-- Conectar el robot Phantom X Pincher con MATLAB o Python usan ROS
+- Conectar el robot Phantom X Pincher con MATLAB o Python usan ROS.
 
 ## Mediciones
-![medicion](https://user-images.githubusercontent.com/58895880/236598028-65311881-fc9b-4b9e-b6b0-8421c4bf795d.jpeg)
+<div>
+<p align = 'center'>
+<img src="./images/medicion.jpeg" alt="Medición" width="400px">
+</p>
+</div>
 
 Se utlizo un calibrador pie de rey para hacer la medición de cada una de las distancias de los eslabones del robot.
 
