@@ -19,7 +19,8 @@
 Se utlizo un calibrador pie de rey para hacer la medición de cada una de las distancias de los eslabones del robot.
 
 Una vez medidos los eslabones se procedio ubicar cada una de los sistemas coordenados para obtener los parametros de DH.
-[pincherDiagram.pdf](https://github.com/vahernandezmo/robotica_lab/files/11411217/pincherDiagram.pdf)
+
+![pincher](https://user-images.githubusercontent.com/58895880/236598385-da5cd57b-954f-4532-a6f4-c3b4995d4cc8.png)
 
 finalmente para obtener nuestra posición de Home seleccionada se utilizaron unas posiciones de offset.
 
