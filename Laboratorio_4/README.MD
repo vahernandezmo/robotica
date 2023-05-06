@@ -16,7 +16,7 @@
 ## Mediciones
 <div>
 <p align = 'center'>
-<img src="./images/medicion.jpeg" alt="Medición" width="400px">
+<img src="./images/medicion.jpeg" alt="Medición" width="500px">
 </p>
 </div>
 
@@ -28,7 +28,11 @@ Una vez medidos los eslabones se procedio ubicar cada una de los sistemas coorde
 
 finalmente para obtener nuestra posición de Home seleccionada se utilizaron unas posiciones de offset.
 
-![home](https://user-images.githubusercontent.com/58895880/236598044-2d5e0569-e7f1-4d22-b5d3-cf59a024e24d.png)
+<div>
+<p align = 'center'>
+<img src="./images/home.png" alt="Home" width="500px">
+</p>
+</div>
 
 
 |i  | tetha (°)| d (mm)| a(mm)| alpha (°)| offset |
