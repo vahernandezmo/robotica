@@ -231,3 +231,7 @@ if __name__ == '__main__':
     except rospy.ROSInterruptException:
         pass
 ```
+El resultado se puede ver en el siguiente video:
+
+https://user-images.githubusercontent.com/14100413/236875274-a2cfab24-4c5b-43d5-bfb4-1ce90132f8bd.mp4
+
