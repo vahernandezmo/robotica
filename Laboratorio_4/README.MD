@@ -90,8 +90,9 @@ Dentro de la carpeta se encuentran las carpetas de configuración (/config), arr
 
 Dentro del archivo “config/basic.yaml” se tienen los parámetros iniciales y de inicialización de los controladores de los motores. Estos parámetros son los mismos que se encuentran en en programa de Dynamixel Wizard. Para nuestro caso en particular se encontró que, aquellos que definen los límites angulares horario y antihorario y la velocidad de giro del motor son necesarios modificarlos para garantizar un desempeño optimo del manipulador.
 
-```Common Workflow Language
-# Name of the motor. It can be whatever string you wanna choose and it is recommended to be anything that you can use to identify the motor
+```MiniYAML
+# Name of the motor. It can be whatever string you wanna choose and it is recommended to be anything 
+# that you can use to identify the motor
 # based on its position or function
 joint_1:
   # Numeral identification of the motor 
@@ -126,4 +127,17 @@ joint_5:
   CW_Angle_Limit: 150
   CCW_Angle_Limit: 264
   Moving_Speed: 60
+```
+En la carpeta launch se encuentran el archivo de arranque “one_controller.launch” donde se configuran los parámetros de comunicación, se definen los motores mediante el archivo “basic.yaml” y se inicializa el nodo “dynamixel_workbench_controllers” del paquete con el mismo nombre, lo que a su vez implica definir los tópicos a los que va a estar conectado y los servicios a los que va a estar suscrito.   
+
+Como una primera aproximación al movimiento de los servomotores se realiza el envío de un comando al servicio desde consola con el fin de indicarle un movimiento al motor y que este lo ejecute. Para ello es necesario ejecutar los comandos “build” para actualizar el paquete y sus modificaciones para luego correr el archivo “.launch” para inicializar los nodos y configuraciones iniciales; luego de esto se ejecuta un comando “source” para que el sistema agregue las variables de entorno que ROS necesita para funcionar; y por último se envía una instrucción mediante el servicio “command” para que ejecute un movimiento el motor con identificador “ID:1”. 
+
+```Linux Kernel Module
+catkin build dynamixel_one_motor
+roslaunch dynamixel_one_motor one_controller.launch
+source devel/setup.bash
+rosservice call /dynamixel_workbench/dynamixel_command "command: ''
+id: 1
+addr_name: 'Goal_Position'
+value: 500"
 ```
