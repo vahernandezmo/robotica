@@ -14,6 +14,7 @@ class MainApp(QWidget):
         self.setWindowTitle("Pincher Controller")  
         self.setWindowIcon(QIcon('robot.png'))
         self.pose=""
+        self.image='images/home.png'
         self.setStyleSheet("background-color:#0D1117; color: #ffffff; font-family:calibri;")
 
         title = """
@@ -52,21 +53,21 @@ class MainApp(QWidget):
 
        
 
-        pose1 = self.createRadioButton("Pose 1", False)
-        pose1.setStyleSheet("font-size:16px;")
-        pose2 = self.createRadioButton("Pose 2", False)
-        pose2.setStyleSheet("font-size:16px;")
-        pose3 = self.createRadioButton("Pose 3", False)
-        pose3.setStyleSheet("font-size:16px;")
-        pose4 = self.createRadioButton("Pose 4", False)
-        pose4.setStyleSheet("font-size:16px;")
-        pose5 = self.createRadioButton("Pose 5", False)
-        pose5.setStyleSheet("font-size:16px;")
+        pose1 = self.createRadioButton("Home", False)
+        pose1.setStyleSheet("font-size:15px; QRadioButton::indicator" "{""border:10px solid #ffffff;""}")
+        pose2 = self.createRadioButton("Pose 1", False)
+        pose2.setStyleSheet("font-size:15px;")
+        pose3 = self.createRadioButton("Pose 2", False)
+        pose3.setStyleSheet("font-size:15px;")
+        pose4 = self.createRadioButton("Pose 3", False)
+        pose4.setStyleSheet("font-size:15px;")
+        pose5 = self.createRadioButton("Pose 4", False)
+        pose5.setStyleSheet("font-size:15px;")
         
 
         optionsLayout = QVBoxLayout()
         poseLabel = QLabel("Escoja la posición: ")
-        poseLabel.setStyleSheet("font-size:18px; font-weight:bold;")
+        poseLabel.setStyleSheet("font-size:16px; font-weight:bold;")
         optionsLayout.addWidget(poseLabel)
         optionsLayout.addWidget(pose1)
         optionsLayout.addWidget(pose2)
@@ -76,7 +77,7 @@ class MainApp(QWidget):
 
         imageLayout = QVBoxLayout()
         self.imageLabel = QLabel(self)
-        self.pixmap = QPixmap('images/home.png')
+        self.pixmap = QPixmap(self.image)
         self.imageLabel.setPixmap(self.pixmap)
         self.imageLabel.resize(self.pixmap.width(),
                           self.pixmap.height())
@@ -84,15 +85,15 @@ class MainApp(QWidget):
 
         jointsLayout = QVBoxLayout()
         MotorLabel = QLabel("Valores articulares: ")
-        MotorLabel.setStyleSheet("font-size:18px; font-weight:bold;")
+        MotorLabel.setStyleSheet("font-size:16px; font-weight:bold;")
         joint1Label = QLabel("Joint1")
-        joint1Label.setStyleSheet("font-size:16px;")
+        joint1Label.setStyleSheet("font-size:15px;")
         joint2Label = QLabel("Joint2")
-        joint2Label.setStyleSheet("font-size:16px;")
+        joint2Label.setStyleSheet("font-size:15px;")
         joint3Label = QLabel("Joint3")
-        joint3Label.setStyleSheet("font-size:16px;")
+        joint3Label.setStyleSheet("font-size:15px;")
         joint4Label = QLabel("Joint4")
-        joint4Label.setStyleSheet("font-size:16px;")
+        joint4Label.setStyleSheet("font-size:15px;")
 
         jointsLayout.addWidget(MotorLabel)
         jointsLayout.addWidget(joint1Label)
@@ -121,6 +122,17 @@ class MainApp(QWidget):
         if radioButton.isChecked():
             self.pose = radioButton.text()
             self.robot.moveRobot(self.pose)
+            if self.pose == 'Home':
+                self.pixmap = QPixmap(self.image)
+            elif self.pose == 'Pose 1':
+                self.pixmap = QPixmap('images/pose1.png')
+            elif self.pose == 'Pose 2':
+                self.pixmap = QPixmap('images/pose2.png')
+            elif self.pose == 'Pose 3':
+                self.pixmap = QPixmap('images/pose3.png')
+            elif self.pose == 'Pose 4':
+                self.pixmap = QPixmap('images/pose4.png')
+            
     
     def getPose(self):
         return self.pose

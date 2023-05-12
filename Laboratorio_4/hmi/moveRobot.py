@@ -5,7 +5,6 @@ import rospy
 import time
 from std_msgs.msg import String
 from dynamixel_workbench_msgs.srv import DynamixelCommand
-from hmi import hmi
 
 __author__ = "V.Hernández, F.Gutierrez, M.Rojas"
 __credits__ = ["Valentina Hernández", "Felipe Gutierrez",
@@ -16,7 +15,6 @@ __status__ = "Test"
 
 class Robot():
     
-
     def jointCommand(self, command, id_num, addr_name, value, time):
         # rospy.init_node('joint_node', anonymous=False)
         rospy.wait_for_service('dynamixel_workbench/dynamixel_command')
@@ -54,16 +52,15 @@ class Robot():
         time.sleep(ts)
 
     def moveRobot(self, valor):
-        if valor == "Pose 1":
-            print("pose1")
+        if valor == "Home":
             self.poseRobot(0, 0, 0, 0, 0)
-        elif valor == "Pose 2":
+        elif valor == "Pose 1":
             self.poseRobot(-25, 15, -20, 20, 0)
-        elif valor == "Pose 3":
+        elif valor == "Pose 2":
             self.poseRobot(35, -35, 30, -30, 0)
-        elif valor == "Pose 4":
+        elif valor == "Pose 3":
             self.poseRobot(-85, 20, -55, 17, 0)
-        elif valor == "Pose 5":
+        elif valor == "Pose 4":
             self.poseRobot(-80, 35, -55, 45, 0)
         else:
             self.poseRobot(-80, 35, -55, 45, 0)
