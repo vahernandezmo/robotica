@@ -258,8 +258,13 @@ https://github.com/vahernandezmo/robotica_lab/assets/55969494/2d20549d-7822-436b
 
 Por último, comparando las posiciones teóricas con las posiciones reales tenemos que:
 
-![home_t](./hmi/images/home.png) ![home_real](./media/Home.jpeg)
-![pose1_t](./hmi/images/pose1.png) ![pose1_real](./media/Pos1.jpeg)
-![pose2_t](./hmi/images/pose2.png) ![pose2_real](./media/Pos2.jpeg)
-![pose3_t](./hmi/images/pose3.png) ![pose3_real](./media/Pos3.jpeg)
-![pose4_t](./hmi/images/pose4.png) ![pose4_real](./media/Pos4.jpeg)
+#### Home
+![home_t](./hmi/images/home.png) ![home_real](./media/Home.jpeg | width=450)
+#### Posición 1
+![pose1_t](./hmi/images/pose1.png) ![pose1_real](./media/Pos1.jpeg | width=450)
+#### Posición 2
+![pose2_t](./hmi/images/pose2.png) ![pose2_real](./media/Pos2.jpeg | width=450)
+#### Posición 3
+![pose3_t](./hmi/images/pose3.png) ![pose3_real](./media/Pos3.jpeg | width=450)
+#### Posición 4
+![pose4_t](./hmi/images/pose4.png) ![pose4_real](./media/Pos4.jpeg | width=450)
