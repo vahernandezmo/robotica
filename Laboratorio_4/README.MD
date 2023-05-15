@@ -235,3 +235,31 @@ El resultado se puede ver en el siguiente video:
 
 https://user-images.githubusercontent.com/14100413/236875274-a2cfab24-4c5b-43d5-bfb4-1ce90132f8bd.mp4
 
+## HMI
+
+Para la interfaz de usuario se utilizó la librería PyQt5 de Python, con la cual se creó la interfaz mostrada en la siguiente figura:
+
+![hmi](./media/hmi.png)
+
+Aquí se pueden evidenciar 4 secciones principales:
+
+1. El título y los nombres de los integrantes del grupo.
+2. Una sección donde se indican la posición en grados de cada una de las juntas en la posición actual
+3. Una sección donde se indican las 5 posiciones que el usuario puede elegir.
+4. Una sección donde se muestra la gráfica del robot usando el toolbox de Peter Corke en Matlab, representando la posición teórica.
+
+Para conectar la interfaz con el movimiento del robot, se creo una clase ```Robot()``` en el script [moveRobot.py](./scripts/moveRobot.py) en la que se tienen métodos para llamar a los servicios y suscriptores necesarios para mover el robot y obtener las posiciones de cada junta. Específicamente, con el método ```jointCommand()``` se llama el servicio para mover cada motor y con el método ``` getJointValues()``` se crea un suscriptor al tópico ```joint_states``` para acceder a las posiciones de cada motor. 
+
+El funcionamiento del HMI puede verse en el siguiente vídeo:
+
+
+https://github.com/vahernandezmo/robotica_lab/assets/55969494/2d20549d-7822-436b-a9ce-cb49121a5c7b
+
+
+Por último, comparando las posiciones teóricas con las posiciones reales tenemos que:
+
+![home_t](./hmi/images/home.png) ![home_real](./media/Home.jpeg)
+![pose1_t](./hmi/images/pose1.png) ![pose1_real](./media/Pos1.jpeg)
+![pose2_t](./hmi/images/pose2.png) ![pose2_real](./media/Pos2.jpeg)
+![pose3_t](./hmi/images/pose3.png) ![pose3_real](./media/Pos3.jpeg)
+![pose4_t](./hmi/images/pose4.png) ![pose4_real](./media/Pos4.jpeg)
