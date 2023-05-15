@@ -471,6 +471,13 @@ class MainApp(QWidget):
 
         self.robot = Robot()
         self.robot.moveRobot('Home')
+
+    def createRadioButton(self, label, checked):
+        radiobutton = QRadioButton(self)
+        radiobutton.setText(label)
+        radiobutton.setChecked(checked)
+        radiobutton.toggled.connect(lambda: self.slot(label))
+        return radiobutton
         
     # ----------------------------------- Events ----------------------------------- #
     def slot(self, value):
@@ -478,9 +485,9 @@ class MainApp(QWidget):
         if radioButton.isChecked():
             self.pose = radioButton.text()
             self.robot.moveRobot(self.pose)
-            self.setImage()
+            self.setValues()
             
-    def setImage(self):
+    def setValues(self):
         if self.pose == 'Home':
             self.imageLabel.setPixmap(QPixmap(self.image))
             self.getJointValues()
@@ -506,13 +513,7 @@ class MainApp(QWidget):
             self.joint3Label.setText(f"Joint3: {str(round(self.robot.getJointsValues()[2]+offset))}")
             self.joint4Label.setText(f"Joint4: {str(self.robot.getJointsValues()[3])}")
 
-    def createRadioButton(self, label, checked):
-        radiobutton = QRadioButton(self)
-        radiobutton.setText(label)
-        radiobutton.setChecked(checked)
-        radiobutton.toggled.connect(lambda: self.slot(label))
-        return radiobutton
-        
+
 
 if __name__ == '__main__':
     app = QApplication([])
