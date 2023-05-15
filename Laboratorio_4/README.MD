@@ -259,12 +259,12 @@ https://github.com/vahernandezmo/robotica_lab/assets/55969494/2d20549d-7822-436b
 Por último, comparando las posiciones teóricas con las posiciones reales tenemos que:
 
 #### Home
-![home_t](./hmi/images/home.png) ![home_real](./media/Home.jpeg | width=450)
+![home_t](./hmi/images/home.png) <img src="./media/Home.jpeg" width="450" alt="Home">
 #### Posición 1
-![pose1_t](./hmi/images/pose1.png) ![pose1_real](./media/Pos1.jpeg | width=450)
+![pose1_t](./hmi/images/pose1.png) <img src="./media/Pos1.jpeg" width="450" alt="Posición 1">
 #### Posición 2
-![pose2_t](./hmi/images/pose2.png) ![pose2_real](./media/Pos2.jpeg | width=450)
+![pose2_t](./hmi/images/pose2.png) <img src="./media/Pos2.jpeg" width="450" alt="Posición 2">
 #### Posición 3
-![pose3_t](./hmi/images/pose3.png) ![pose3_real](./media/Pos3.jpeg | width=450)
+![pose3_t](./hmi/images/pose3.png) <img src="/media/Pos3.jpeg" width="450" alt="Posición 3">
 #### Posición 4
-![pose4_t](./hmi/images/pose4.png) ![pose4_real](./media/Pos4.jpeg | width=450)
+![pose4_t](./hmi/images/pose4.png) <img src="./media/Pos4.jpeg" width="450" alt="Posición 4>
