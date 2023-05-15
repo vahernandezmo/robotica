@@ -265,6 +265,6 @@ Por último, comparando las posiciones teóricas con las posiciones reales tenem
 #### Posición 2
 ![pose2_t](./hmi/images/pose2.png) <img src="./media/Pos2.jpeg" width="450" alt="Posición 2">
 #### Posición 3
-![pose3_t](./hmi/images/pose3.png) <img src="/media/Pos3.jpeg" width="450" alt="Posición 3">
+![pose3_t](./hmi/images/pose3.png) <img src="./media/Pos3.jpeg" width="450" alt="Posición 3">
 #### Posición 4
-![pose4_t](./hmi/images/pose4.png) <img src="./media/Pos4.jpeg" width="450" alt="Posición 4>
+![pose4_t](./hmi/images/pose4.png) <img src="./media/Pos4.jpeg" width="450" alt="Posición 4">
