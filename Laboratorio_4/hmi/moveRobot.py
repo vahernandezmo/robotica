@@ -4,7 +4,9 @@ Allows to use the service dynamixel_command
 import rospy
 import time
 from std_msgs.msg import String
+from sensor_msgs.msg import JointState
 from dynamixel_workbench_msgs.srv import DynamixelCommand
+import numpy as np
 
 __author__ = "V.Hernández, F.Gutierrez, M.Rojas"
 __credits__ = ["Valentina Hernández", "Felipe Gutierrez",
@@ -14,7 +16,9 @@ __status__ = "Test"
 
 
 class Robot():
-    
+    def __init__(self):
+        self.jointValues = []
+
     def jointCommand(self, command, id_num, addr_name, value, time):
         # rospy.init_node('joint_node', anonymous=False)
         rospy.wait_for_service('dynamixel_workbench/dynamixel_command')
@@ -64,3 +68,21 @@ class Robot():
             self.poseRobot(-80, 35, -55, 45, 0)
         else:
             self.poseRobot(-80, 35, -55, 45, 0)
+
+
+    def getJointsValues(self):
+        self.listener()
+        return self.jointValues
+
+    def callback(self, data):
+        self.jointValues = data.position
+        #print(data.position)
+        self.jointValues = np.round(np.rad2deg(self.jointValues), 2)
+        #print(f"[Joints] {self.jointValues}")
+ 
+
+    def listener(self):
+        rospy.init_node('joint_listener', anonymous=True)
+        rospy.Subscriber("/dynamixel_workbench/joint_states", JointState, self.callback)
+        rospy.sleep(0.1)
+        

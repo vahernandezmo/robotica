@@ -16,6 +16,10 @@ class MainApp(QWidget):
         self.pose=""
         self.image='images/home.png'
         self.setStyleSheet("background-color:#0D1117; color: #ffffff; font-family:calibri;")
+        self.joint1Value = 0.0
+        self.joint2Value = 0.0
+        self.joint3Value = 0.0
+        self.joint4Value = 0.0
 
         title = """
         Robótica - Laboratorio 4
@@ -45,6 +49,7 @@ class MainApp(QWidget):
         #create top level layout
         outerLayout = QVBoxLayout()
         middleLayout = QHBoxLayout()
+        middleLayout.setSpacing(15)
         leftLayout  = QVBoxLayout()
 
         topLayout = QVBoxLayout()
@@ -75,37 +80,37 @@ class MainApp(QWidget):
         optionsLayout.addWidget(pose4)
         optionsLayout.addWidget(pose5)
 
-        imageLayout = QVBoxLayout()
+        self.imageLayout = QVBoxLayout()
         self.imageLabel = QLabel(self)
         self.pixmap = QPixmap(self.image)
         self.imageLabel.setPixmap(self.pixmap)
         self.imageLabel.resize(self.pixmap.width(),
                           self.pixmap.height())
-        imageLayout.addWidget(self.imageLabel)
+        self.imageLayout.addWidget(self.imageLabel)
 
         jointsLayout = QVBoxLayout()
         MotorLabel = QLabel("Valores articulares: ")
         MotorLabel.setStyleSheet("font-size:16px; font-weight:bold;")
-        joint1Label = QLabel("Joint1")
-        joint1Label.setStyleSheet("font-size:15px;")
-        joint2Label = QLabel("Joint2")
-        joint2Label.setStyleSheet("font-size:15px;")
-        joint3Label = QLabel("Joint3")
-        joint3Label.setStyleSheet("font-size:15px;")
-        joint4Label = QLabel("Joint4")
-        joint4Label.setStyleSheet("font-size:15px;")
+        self.joint1Label = QLabel(f"Joint1: {self.joint1Value}")
+        self.joint1Label.setStyleSheet("font-size:15px;")
+        self.joint2Label = QLabel(f"Joint2: {self.joint2Value}")
+        self.joint2Label.setStyleSheet("font-size:15px;")
+        self.joint3Label = QLabel(f"Joint3: {self.joint3Value}")
+        self.joint3Label.setStyleSheet("font-size:15px;")
+        self.joint4Label = QLabel(f"Joint4: {self.joint1Value}")
+        self.joint4Label.setStyleSheet("font-size:15px;")
 
         jointsLayout.addWidget(MotorLabel)
-        jointsLayout.addWidget(joint1Label)
-        jointsLayout.addWidget(joint2Label)
-        jointsLayout.addWidget(joint3Label)
-        jointsLayout.addWidget(joint4Label)
+        jointsLayout.addWidget(self.joint1Label)
+        jointsLayout.addWidget(self.joint2Label)
+        jointsLayout.addWidget(self.joint3Label)
+        jointsLayout.addWidget(self.joint4Label)
         
         leftLayout.addLayout(jointsLayout)
         leftLayout.addLayout(optionsLayout)
         
         middleLayout.addLayout(leftLayout)
-        middleLayout.addLayout(imageLayout)
+        middleLayout.addLayout(self.imageLayout)
 
         outerLayout.addLayout(topLayout)
         outerLayout.addLayout(middleLayout)
@@ -115,27 +120,41 @@ class MainApp(QWidget):
         self.setLayout(outerLayout)
 
         self.robot = Robot()
+        self.robot.moveRobot('Home')
         
-    # ----------------------------------- Slots ----------------------------------- #
+    # ----------------------------------- Events ----------------------------------- #
     def slot(self, value):
         radioButton = self.sender()
         if radioButton.isChecked():
             self.pose = radioButton.text()
             self.robot.moveRobot(self.pose)
-            if self.pose == 'Home':
-                self.pixmap = QPixmap(self.image)
-            elif self.pose == 'Pose 1':
-                self.pixmap = QPixmap('images/pose1.png')
-            elif self.pose == 'Pose 2':
-                self.pixmap = QPixmap('images/pose2.png')
-            elif self.pose == 'Pose 3':
-                self.pixmap = QPixmap('images/pose3.png')
-            elif self.pose == 'Pose 4':
-                self.pixmap = QPixmap('images/pose4.png')
+            self.setImage()
             
+    def setImage(self):
+        if self.pose == 'Home':
+            self.imageLabel.setPixmap(QPixmap(self.image))
+            self.getJointValues()
+        elif self.pose == 'Pose 1':
+            self.imageLabel.setPixmap(QPixmap('images/pose1.png'))
+            self.getJointValues()
+        elif self.pose == 'Pose 2':
+            self.imageLabel.setPixmap(QPixmap('images/pose2.png'))
+            self.getJointValues()
+        elif self.pose == 'Pose 3':
+            self.imageLabel.setPixmap(QPixmap('images/pose3.png'))
+            self.getJointValues()
+        elif self.pose == 'Pose 4':
+            self.imageLabel.setPixmap(QPixmap('images/pose4.png'))
+            self.getJointValues()
     
     def getPose(self):
         return self.pose
+    
+    def getJointValues(self, offset=80):
+            self.joint1Label.setText(f"Joint1: {str(self.robot.getJointsValues()[0])}")
+            self.joint2Label.setText(f"Joint2: {str(self.robot.getJointsValues()[1])}")
+            self.joint3Label.setText(f"Joint3: {str(round(self.robot.getJointsValues()[2]+offset))}")
+            self.joint4Label.setText(f"Joint4: {str(self.robot.getJointsValues()[3])}")
 
     def createRadioButton(self, label, checked):
         radiobutton = QRadioButton(self)
