@@ -16,7 +16,7 @@
 ## Mediciones
 <div>
 <p align = 'center'>
-<img src="./images/medicion.jpeg" alt="Medición" width="500px">
+<img src="./media/medicion.jpeg" alt="Medición" width="500px">
 </p>
 </div>
 
@@ -29,7 +29,7 @@ Una vez medidos los eslabones se procedio ubicar cada una de los sistemas coorde
 finalmente para obtener nuestra posición de Home seleccionada se utilizaron unas posiciones de offset.
 <div>
 <p align = 'center'>
-<img src="./images/home.png" alt="Home" width="500px">
+<img src="./media/home.png" alt="Home" width="500px">
 </p>
 </div>
 
