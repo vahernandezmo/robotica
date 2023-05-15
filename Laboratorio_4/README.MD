@@ -472,7 +472,7 @@ class MainApp(QWidget):
         self.robot = Robot()
         self.robot.moveRobot('Home')
         
-    # ----------------------------------- Slots ----------------------------------- #
+    # ----------------------------------- Events ----------------------------------- #
     def slot(self, value):
         radioButton = self.sender()
         if radioButton.isChecked():
