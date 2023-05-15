@@ -250,6 +250,274 @@ Aquí se pueden evidenciar 4 secciones principales:
 
 Para conectar la interfaz con el movimiento del robot, se creo una clase ```Robot()``` en el script [moveRobot.py](./scripts/moveRobot.py) en la que se tienen métodos para llamar a los servicios y suscriptores necesarios para mover el robot y obtener las posiciones de cada junta. Específicamente, con el método ```jointCommand()``` se llama el servicio para mover cada motor y con el método ``` getJointValues()``` se crea un suscriptor al tópico ```joint_states``` para acceder a las posiciones de cada motor. 
 
+
+### ```moveRobot.py```
+```Python
+
+import rospy
+import time
+from std_msgs.msg import String
+from sensor_msgs.msg import JointState
+from dynamixel_workbench_msgs.srv import DynamixelCommand
+import numpy as np
+
+__author__ = "V.Hernández, F.Gutierrez, M.Rojas"
+__credits__ = ["Valentina Hernández", "Felipe Gutierrez",
+    "Manuel Rojas", "Robotis"]
+__email__ = "vahernandezmo@unal.edu.co"
+__status__ = "Test"
+
+
+class Robot():
+    def __init__(self):
+        self.jointValues = []
+
+    def jointCommand(self, command, id_num, addr_name, value, time):
+        # rospy.init_node('joint_node', anonymous=False)
+        rospy.wait_for_service('dynamixel_workbench/dynamixel_command')
+        try:
+            dynamixel_command = rospy.ServiceProxy(
+                '/dynamixel_workbench/dynamixel_command', DynamixelCommand)
+            result = dynamixel_command(command, id_num, addr_name, value)
+            rospy.sleep(time)
+            return result.comm_result
+        except rospy.ServiceException as exc:
+            print(str(exc))
+            
+
+
+    def ang2bit(self,t):
+        return int(round(t*1023/(300), 0))
+
+
+    def poseRobot(self, t1, t2, t3, t4, t5=0, ts = 0.5):
+        t1 = self.ang2bit(t1)
+        t2 = self.ang2bit(t2)
+        t3 = self.ang2bit(t3)
+        t4 = self.ang2bit(t4)
+        t5 = self.ang2bit(t5)
+
+        self.jointCommand('', 1, 'Goal_Position', 511+t1, 0.5)
+        time.sleep(ts)
+        self.jointCommand('', 2, 'Goal_Position', 511+t2, 0.5)
+        time.sleep(ts)
+        self.jointCommand('', 3, 'Goal_Position', 239+t3, 0.5)
+        time.sleep(ts)
+        self.jointCommand('', 4, 'Goal_Position', 511+t4, 0.5)
+        time.sleep(ts)
+        self.jointCommand('', 5, 'Goal_Position', 511+t5, 0.5)
+        time.sleep(ts)
+
+    def moveRobot(self, valor):
+        if valor == "Home":
+            self.poseRobot(0, 0, 0, 0, 0)
+        elif valor == "Pose 1":
+            self.poseRobot(-25, 15, -20, 20, 0)
+        elif valor == "Pose 2":
+            self.poseRobot(35, -35, 30, -30, 0)
+        elif valor == "Pose 3":
+            self.poseRobot(-85, 20, -55, 17, 0)
+        elif valor == "Pose 4":
+            self.poseRobot(-80, 35, -55, 45, 0)
+        else:
+            self.poseRobot(-80, 35, -55, 45, 0)
+
+
+    def getJointsValues(self):
+        self.listener()
+        return self.jointValues
+
+    def callback(self, data):
+        self.jointValues = data.position
+        #print(data.position)
+        self.jointValues = np.round(np.rad2deg(self.jointValues), 2)
+        #print(f"[Joints] {self.jointValues}")
+ 
+
+    def listener(self):
+        rospy.init_node('joint_listener', anonymous=True)
+        rospy.Subscriber("/dynamixel_workbench/joint_states", JointState, self.callback)
+        rospy.sleep(0.1)
+        
+``` 
+
+### ```hmi.py```
+
+```Python
+import typing
+from PyQt5 import QtCore
+from PyQt5.QtWidgets import *
+from PyQt5.QtCore import *
+from PyQt5.QtGui import *
+from PyQt5.QtWidgets import QWidget
+from moveRobot import Robot
+
+class MainApp(QWidget):
+    def __init__(self, parent = None, *args):
+        super(MainApp, self).__init__(parent=parent)
+        self.setMinimumSize(854,480) 
+        self.setMaximumSize(1280,720)
+        self.setWindowTitle("Pincher Controller")  
+        self.setWindowIcon(QIcon('robot.png'))
+        self.pose=""
+        self.image='images/home.png'
+        self.setStyleSheet("background-color:#0D1117; color: #ffffff; font-family:calibri;")
+        self.joint1Value = 0.0
+        self.joint2Value = 0.0
+        self.joint3Value = 0.0
+        self.joint4Value = 0.0
+
+        title = """
+        Robótica - Laboratorio 4
+        Valentina Hernández - Felipe Gutierrez - Manuel Rojas
+        """
+
+        width = self.frameGeometry().width()
+        height = self.frameGeometry().height()
+        #self.widget = QWidget(self)
+        
+
+        label = QLabel(title, self)
+        label.setAlignment(Qt.AlignCenter)
+        label.setStyleSheet("background:#1D2734; color: #ffffff;font-size:18px; font-family:calibri;")
+
+        
+        """
+        names_label = QLabel("Valentina Hernández - Felipe Gutierrez - Manuel Rojas", self)
+        names_label.setAlignment(Qt.AlignCenter)
+        names_label.setStyleSheet("background:#1D2734; color: #ffffff;font-size:16px; font-family:calibri;")
+        names_label.setGeometry(0,int(0.08*height),width,int(0.08*height))
+        
+        label.setGeometry(0,0,width,int(0.08*height))
+
+        #self.setCentralWidget(label)
+        """
+        #create top level layout
+        outerLayout = QVBoxLayout()
+        middleLayout = QHBoxLayout()
+        middleLayout.setSpacing(15)
+        leftLayout  = QVBoxLayout()
+
+        topLayout = QVBoxLayout()
+        topLayout.addWidget(label)
+        #topLayout.addWidget(names_label)
+
+       
+
+        pose1 = self.createRadioButton("Home", False)
+        pose1.setStyleSheet("font-size:15px; QRadioButton::indicator" "{""border:10px solid #ffffff;""}")
+        pose2 = self.createRadioButton("Pose 1", False)
+        pose2.setStyleSheet("font-size:15px;")
+        pose3 = self.createRadioButton("Pose 2", False)
+        pose3.setStyleSheet("font-size:15px;")
+        pose4 = self.createRadioButton("Pose 3", False)
+        pose4.setStyleSheet("font-size:15px;")
+        pose5 = self.createRadioButton("Pose 4", False)
+        pose5.setStyleSheet("font-size:15px;")
+        
+
+        optionsLayout = QVBoxLayout()
+        poseLabel = QLabel("Escoja la posición: ")
+        poseLabel.setStyleSheet("font-size:16px; font-weight:bold;")
+        optionsLayout.addWidget(poseLabel)
+        optionsLayout.addWidget(pose1)
+        optionsLayout.addWidget(pose2)
+        optionsLayout.addWidget(pose3)
+        optionsLayout.addWidget(pose4)
+        optionsLayout.addWidget(pose5)
+
+        self.imageLayout = QVBoxLayout()
+        self.imageLabel = QLabel(self)
+        self.pixmap = QPixmap(self.image)
+        self.imageLabel.setPixmap(self.pixmap)
+        self.imageLabel.resize(self.pixmap.width(),
+                          self.pixmap.height())
+        self.imageLayout.addWidget(self.imageLabel)
+
+        jointsLayout = QVBoxLayout()
+        MotorLabel = QLabel("Valores articulares: ")
+        MotorLabel.setStyleSheet("font-size:16px; font-weight:bold;")
+        self.joint1Label = QLabel(f"Joint1: {self.joint1Value}")
+        self.joint1Label.setStyleSheet("font-size:15px;")
+        self.joint2Label = QLabel(f"Joint2: {self.joint2Value}")
+        self.joint2Label.setStyleSheet("font-size:15px;")
+        self.joint3Label = QLabel(f"Joint3: {self.joint3Value}")
+        self.joint3Label.setStyleSheet("font-size:15px;")
+        self.joint4Label = QLabel(f"Joint4: {self.joint1Value}")
+        self.joint4Label.setStyleSheet("font-size:15px;")
+
+        jointsLayout.addWidget(MotorLabel)
+        jointsLayout.addWidget(self.joint1Label)
+        jointsLayout.addWidget(self.joint2Label)
+        jointsLayout.addWidget(self.joint3Label)
+        jointsLayout.addWidget(self.joint4Label)
+        
+        leftLayout.addLayout(jointsLayout)
+        leftLayout.addLayout(optionsLayout)
+        
+        middleLayout.addLayout(leftLayout)
+        middleLayout.addLayout(self.imageLayout)
+
+        outerLayout.addLayout(topLayout)
+        outerLayout.addLayout(middleLayout)
+        outerLayout.addStretch()
+
+
+        self.setLayout(outerLayout)
+
+        self.robot = Robot()
+        self.robot.moveRobot('Home')
+        
+    # ----------------------------------- Slots ----------------------------------- #
+    def slot(self, value):
+        radioButton = self.sender()
+        if radioButton.isChecked():
+            self.pose = radioButton.text()
+            self.robot.moveRobot(self.pose)
+            self.setImage()
+            
+    def setImage(self):
+        if self.pose == 'Home':
+            self.imageLabel.setPixmap(QPixmap(self.image))
+            self.getJointValues()
+        elif self.pose == 'Pose 1':
+            self.imageLabel.setPixmap(QPixmap('images/pose1.png'))
+            self.getJointValues()
+        elif self.pose == 'Pose 2':
+            self.imageLabel.setPixmap(QPixmap('images/pose2.png'))
+            self.getJointValues()
+        elif self.pose == 'Pose 3':
+            self.imageLabel.setPixmap(QPixmap('images/pose3.png'))
+            self.getJointValues()
+        elif self.pose == 'Pose 4':
+            self.imageLabel.setPixmap(QPixmap('images/pose4.png'))
+            self.getJointValues()
+    
+    def getPose(self):
+        return self.pose
+    
+    def getJointValues(self, offset=80):
+            self.joint1Label.setText(f"Joint1: {str(self.robot.getJointsValues()[0])}")
+            self.joint2Label.setText(f"Joint2: {str(self.robot.getJointsValues()[1])}")
+            self.joint3Label.setText(f"Joint3: {str(round(self.robot.getJointsValues()[2]+offset))}")
+            self.joint4Label.setText(f"Joint4: {str(self.robot.getJointsValues()[3])}")
+
+    def createRadioButton(self, label, checked):
+        radiobutton = QRadioButton(self)
+        radiobutton.setText(label)
+        radiobutton.setChecked(checked)
+        radiobutton.toggled.connect(lambda: self.slot(label))
+        return radiobutton
+        
+
+if __name__ == '__main__':
+    app = QApplication([])
+    window = MainApp()
+    window.show()
+    app.exec_()
+
+```
+
 El funcionamiento del HMI puede verse en el siguiente vídeo:
 
 
