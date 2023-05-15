@@ -251,6 +251,10 @@ Aquí se pueden evidenciar 4 secciones principales:
 Para conectar la interfaz con el movimiento del robot, se creo una clase ```Robot()``` en el script [moveRobot.py](./scripts/moveRobot.py) en la que se tienen métodos para llamar a los servicios y suscriptores necesarios para mover el robot y obtener las posiciones de cada junta. Específicamente, con el método ```jointCommand()``` se llama el servicio para mover cada motor y con el método ``` getJointValues()``` se crea un suscriptor al tópico ```joint_states``` para acceder a las posiciones de cada motor. 
 
 
+El funcionamiento del HMI puede verse en el siguiente vídeo:
+
+https://github.com/vahernandezmo/robotica_lab/assets/55969494/2d20549d-7822-436b-a9ce-cb49121a5c7b
+
 ### ```moveRobot.py```
 ```Python
 
@@ -518,10 +522,6 @@ if __name__ == '__main__':
 
 ```
 
-El funcionamiento del HMI puede verse en el siguiente vídeo:
-
-
-https://github.com/vahernandezmo/robotica_lab/assets/55969494/2d20549d-7822-436b-a9ce-cb49121a5c7b
 
 
 Por último, comparando las posiciones teóricas con las posiciones reales tenemos que:
