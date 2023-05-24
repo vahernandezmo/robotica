@@ -37,23 +37,33 @@ class Robot():
         return int(round(t*1023/(300), 0))
 
 
-    def poseRobot(self, t1, t2, t3, t4, t5=0, ts = 0.5):
+    def poseRobot(self, t1, t2, t3, t4, t5, ts = 0.5):
         t1 = self.ang2bit(t1)
         t2 = self.ang2bit(t2)
         t3 = self.ang2bit(t3)
         t4 = self.ang2bit(t4)
         t5 = self.ang2bit(t5)
-
+        
+        """
+        self.jointCommand('', 5, 'Goal_Position', 511+t5, 0.5)
+        self.jointCommand('', 4, 'Goal_Position', 511+t4, 0.5)
+        self.jointCommand('', 3, 'Goal_Position', 511+t3, 0.5)
+        self.jointCommand('', 2, 'Goal_Position', 205+t2, 0.5)
         self.jointCommand('', 1, 'Goal_Position', 511+t1, 0.5)
         time.sleep(ts)
-        self.jointCommand('', 2, 'Goal_Position', 511+t2, 0.5)
-        time.sleep(ts)
-        self.jointCommand('', 3, 'Goal_Position', 239+t3, 0.5)
-        time.sleep(ts)
+        """
+        
+        self.jointCommand('', 1, 'Goal_Position', 511+t1, 0.5)
+        #time.sleep(ts)
+        self.jointCommand('', 2, 'Goal_Position', 205+t2, 0.5)
+        #time.sleep(ts)
+        self.jointCommand('', 3, 'Goal_Position', 511+t3, 0.5)
+        #time.sleep(ts)
         self.jointCommand('', 4, 'Goal_Position', 511+t4, 0.5)
-        time.sleep(ts)
+        #time.sleep(ts)
         self.jointCommand('', 5, 'Goal_Position', 511+t5, 0.5)
         time.sleep(ts)
+        
 
     def moveRobot(self, valor):
         if valor == "Home":
@@ -84,5 +94,5 @@ class Robot():
     def listener(self):
         rospy.init_node('joint_listener', anonymous=True)
         rospy.Subscriber("/dynamixel_workbench/joint_states", JointState, self.callback)
-        rospy.sleep(0.1)
+        rospy.sleep(0.05)
         
