@@ -32,6 +32,8 @@ Donde:
 
 A continuación se puede ver una imagen que indica lo mencionado
 
+![image](https://github.com/vahernandezmo/robotica_lab/assets/58895880/b1eeada2-514a-4bac-9d68-e27e13fe3090)
+
 
 Para el proceso de programar la cinematica inversa en python se definió la función a la cual le ingresa la posición x,y,z del efector final y retorna los valores articulares de las cuatro articulación del robot.
 
