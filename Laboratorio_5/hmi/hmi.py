@@ -14,7 +14,7 @@ class MainApp(QWidget):
         self.setWindowTitle("Pincher Controller")  
         self.setWindowIcon(QIcon('robot.png'))
         self.pose=""
-        self.image='images/workspace.jpg'
+        self.image='images/workspace.png'
         self.setStyleSheet("background-color:#0D1117; color: #ffffff; font-family:calibri;")
         self.joint1Value = 0.0
         self.joint2Value = 0.0
@@ -63,11 +63,11 @@ class MainApp(QWidget):
         #topLayout.addWidget(names_label)
 
         statusLayout = QVBoxLayout()
-        statusLabel = QLabel(self.status_text, self)
-        statusLabel.setStyleSheet(self.state_default_style)
-        statusLabel.setAlignment(Qt.AlignCenter)
+        self.statusLabel = QLabel(self.status_text, self)
+        self.statusLabel.setStyleSheet(self.state_default_style)
+        self.statusLabel.setAlignment(Qt.AlignCenter)
         #statusLayout.addSpacerItem(QSpacerItem(int(0.1*width), int(0.1*height)))
-        statusLayout.addWidget(statusLabel)
+        statusLayout.addWidget(self.statusLabel)
         #statusLayout.addSpacerItem(QSpacerItem(int(0.1*width), int(0.1*height)))
 
         pose1 = self.createRadioButton("Cargar Herramienta", False)
@@ -121,6 +121,7 @@ class MainApp(QWidget):
         stopLayout = QHBoxLayout()
         self.stopButton = QPushButton(stop_text, self)
         self.stopButton.setStyleSheet("background:#990B14; color: #ffffff;font-size:16px; font-family:calibri; font-weight:bold;")
+        self.stopButton.clicked.connect(self.stop_robot)
         stopLayout.addSpacerItem(QSpacerItem(int(0.2*width), int(0.2*height)))
         stopLayout.addWidget(self.stopButton)
         stopLayout.addSpacerItem(QSpacerItem(int(0.2*width), int(0.2*height)))
@@ -142,7 +143,7 @@ class MainApp(QWidget):
         self.setLayout(outerLayout)
 
         self.robot = Robot()
-        #self.robot.moveRobot('Home')
+        self.robot.goHome()
 
     def createRadioButton(self, label, checked):
         radiobutton = QRadioButton(self)
@@ -156,24 +157,35 @@ class MainApp(QWidget):
         radioButton = self.sender()
         if radioButton.isChecked():
             self.pose = radioButton.text()
-            self.robot.moveRobot(self.pose)
             self.setValues()
-            
+    def stop_robot(self):
+        print("Stopping robot")
     def setValues(self):
         if self.pose == 'Cargar Herramienta':
             #self.imageLabel.setPixmap(QPixmap(self.image))
+            self.statusLabel.setTExt("Cargando Herramienta")
+            self.robot.pickMarker()
             self.getJointValues()
         elif self.pose == 'Espacio de Trabajo':
             self.imageLabel.setPixmap(QPixmap('images/workspace.png'))
+            self.statusLabel.setTExt("Dibujando Espacio de Trabajo")
+            self.robot.draw("Arc_interno.csv")
+            self.robot.draw('Arc_externo.csv')
             self.getJointValues()
         elif self.pose == 'Dibujo de Iniciales':
             self.imageLabel.setPixmap(QPixmap('images/initials.png'))
+            self.statusLabel.setTExt("Dibujando Iniciales")
+            self.robot.draw("Letras.csv")
             self.getJointValues()
         elif self.pose == 'Dibujo de Cara':
             self.imageLabel.setPixmap(QPixmap('images/face.png'))
+            self.statusLabel.setTExt("Dibujando cara")
+            self.robot.draw('Cara2.csv')
             self.getJointValues()
         elif self.pose == 'Descarga de la Herramienta':
             #self.imageLabel.setPixmap(QPixmap('images/pose4.png'))
+            self.statusLabel.setTExt("Descargando Herramienta")
+            self.robot.pickMarker(False)
             self.getJointValues()
     
     def getPose(self):
