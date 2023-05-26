@@ -14,15 +14,21 @@ class MainApp(QWidget):
         self.setWindowTitle("Pincher Controller")  
         self.setWindowIcon(QIcon('robot.png'))
         self.pose=""
-        self.image='images/home.png'
+        self.image='images/workspace.jpg'
         self.setStyleSheet("background-color:#0D1117; color: #ffffff; font-family:calibri;")
         self.joint1Value = 0.0
         self.joint2Value = 0.0
         self.joint3Value = 0.0
         self.joint4Value = 0.0
-
+        self.state_default_style = "background:#FCAF58; color: #000000;font-size:16px; font-family:calibri; font-weight:bold"
+        self.status_text = """
+        Herramienta Descargada
+        """
+        stop_text = """
+        STOP
+        """
         title = """
-        Robótica - Laboratorio 4
+        Robótica - Laboratorio 5
         Valentina Hernández - Felipe Gutierrez - Manuel Rojas
         """
 
@@ -39,7 +45,7 @@ class MainApp(QWidget):
         """
         names_label = QLabel("Valentina Hernández - Felipe Gutierrez - Manuel Rojas", self)
         names_label.setAlignment(Qt.AlignCenter)
-        names_label.setStyleSheet("background:#1D2734; color: #ffffff;font-size:16px; font-family:calibri;")
+        names_label.setStyleSheet("background:#1D2734; color: #000000;font-size:16px; font-family:calibri;")
         names_label.setGeometry(0,int(0.08*height),width,int(0.08*height))
         
         label.setGeometry(0,0,width,int(0.08*height))
@@ -56,22 +62,28 @@ class MainApp(QWidget):
         topLayout.addWidget(label)
         #topLayout.addWidget(names_label)
 
-       
+        statusLayout = QVBoxLayout()
+        statusLabel = QLabel(self.status_text, self)
+        statusLabel.setStyleSheet(self.state_default_style)
+        statusLabel.setAlignment(Qt.AlignCenter)
+        #statusLayout.addSpacerItem(QSpacerItem(int(0.1*width), int(0.1*height)))
+        statusLayout.addWidget(statusLabel)
+        #statusLayout.addSpacerItem(QSpacerItem(int(0.1*width), int(0.1*height)))
 
-        pose1 = self.createRadioButton("Home", False)
+        pose1 = self.createRadioButton("Cargar Herramienta", False)
         pose1.setStyleSheet("font-size:15px; QRadioButton::indicator" "{""border:10px solid #ffffff;""}")
-        pose2 = self.createRadioButton("Pose 1", False)
+        pose2 = self.createRadioButton("Espacio de Trabajo", False)
         pose2.setStyleSheet("font-size:15px;")
-        pose3 = self.createRadioButton("Pose 2", False)
+        pose3 = self.createRadioButton("Dibujo de Iniciales", False)
         pose3.setStyleSheet("font-size:15px;")
-        pose4 = self.createRadioButton("Pose 3", False)
+        pose4 = self.createRadioButton("Dibujo de Cara", False)
         pose4.setStyleSheet("font-size:15px;")
-        pose5 = self.createRadioButton("Pose 4", False)
+        pose5 = self.createRadioButton("Descarga de la Herramienta", False)
         pose5.setStyleSheet("font-size:15px;")
         
 
         optionsLayout = QVBoxLayout()
-        poseLabel = QLabel("Escoja la posición: ")
+        poseLabel = QLabel("Rutina a realizar: ")
         poseLabel.setStyleSheet("font-size:16px; font-weight:bold;")
         optionsLayout.addWidget(poseLabel)
         optionsLayout.addWidget(pose1)
@@ -105,6 +117,14 @@ class MainApp(QWidget):
         jointsLayout.addWidget(self.joint2Label)
         jointsLayout.addWidget(self.joint3Label)
         jointsLayout.addWidget(self.joint4Label)
+
+        stopLayout = QHBoxLayout()
+        self.stopButton = QPushButton(stop_text, self)
+        self.stopButton.setStyleSheet("background:#990B14; color: #ffffff;font-size:16px; font-family:calibri; font-weight:bold;")
+        stopLayout.addSpacerItem(QSpacerItem(int(0.2*width), int(0.2*height)))
+        stopLayout.addWidget(self.stopButton)
+        stopLayout.addSpacerItem(QSpacerItem(int(0.2*width), int(0.2*height)))
+        
         
         leftLayout.addLayout(jointsLayout)
         leftLayout.addLayout(optionsLayout)
@@ -113,14 +133,16 @@ class MainApp(QWidget):
         middleLayout.addLayout(self.imageLayout)
 
         outerLayout.addLayout(topLayout)
+        outerLayout.addLayout(statusLayout)
         outerLayout.addLayout(middleLayout)
+        outerLayout.addLayout(stopLayout)
         outerLayout.addStretch()
 
 
         self.setLayout(outerLayout)
 
         self.robot = Robot()
-        self.robot.moveRobot('Home')
+        #self.robot.moveRobot('Home')
 
     def createRadioButton(self, label, checked):
         radiobutton = QRadioButton(self)
@@ -138,20 +160,20 @@ class MainApp(QWidget):
             self.setValues()
             
     def setValues(self):
-        if self.pose == 'Home':
-            self.imageLabel.setPixmap(QPixmap(self.image))
+        if self.pose == 'Cargar Herramienta':
+            #self.imageLabel.setPixmap(QPixmap(self.image))
             self.getJointValues()
-        elif self.pose == 'Pose 1':
-            self.imageLabel.setPixmap(QPixmap('images/pose1.png'))
+        elif self.pose == 'Espacio de Trabajo':
+            self.imageLabel.setPixmap(QPixmap('images/workspace.png'))
             self.getJointValues()
-        elif self.pose == 'Pose 2':
-            self.imageLabel.setPixmap(QPixmap('images/pose2.png'))
+        elif self.pose == 'Dibujo de Iniciales':
+            self.imageLabel.setPixmap(QPixmap('images/initials.png'))
             self.getJointValues()
-        elif self.pose == 'Pose 3':
-            self.imageLabel.setPixmap(QPixmap('images/pose3.png'))
+        elif self.pose == 'Dibujo de Cara':
+            self.imageLabel.setPixmap(QPixmap('images/face.png'))
             self.getJointValues()
-        elif self.pose == 'Pose 4':
-            self.imageLabel.setPixmap(QPixmap('images/pose4.png'))
+        elif self.pose == 'Descarga de la Herramienta':
+            #self.imageLabel.setPixmap(QPixmap('images/pose4.png'))
             self.getJointValues()
     
     def getPose(self):
@@ -162,6 +184,9 @@ class MainApp(QWidget):
             self.joint2Label.setText(f"Joint2: {str(self.robot.getJointsValues()[1])}")
             self.joint3Label.setText(f"Joint3: {str(round(self.robot.getJointsValues()[2]+offset))}")
             self.joint4Label.setText(f"Joint4: {str(self.robot.getJointsValues()[3])}")
+    def getTime(self, start_time, end_time):
+        t=end_time-start_time #Se restan tiempos de finalizado e inicio
+        return t
 
 
 
