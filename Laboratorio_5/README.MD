@@ -137,6 +137,19 @@ https://github.com/vahernandezmo/robotica_lab/assets/14100413/0624308c-b366-4a86
 
 ## Interacción con el usuario
 
+Para la interfaz de usuario se utilizó la librería PyQt5 de Python, con la cual se creó la interfaz mostrada en la siguiente figura:
+
+En esta se pueden evidenciar 7 secciones:
+
+1. El título y los nombres de los integrantes del grupo.
+2. Una sección donde se le indica al usuario lo que está ocurriendo en el momento
+3. Una sección donde se indican la posición en grados de cada una de las juntas en la posición actual
+4. Una sección donde se indica el tiempo que demora cada rutina en ejecutarse
+5. Una sección donde se indican las 5 rutinas que el usuario puede elegir: cargar la herramienta, dibujar alguna de las tres figuras o descargar la herramienta
+6. Una sección donde se muestra una imagen correspondiente a la figura que se está dibujando.
+7. Y por último un botón de parada de emergencia.
+
+Para conectar la interfaz con el movimiento del robot, se creo una clase ```Robot()``` en el script ```moveRobot.py``` en la que se tienen métodos para llamar a los servicios y suscriptores necesarios para mover el robot y obtener las posiciones de cada junta. Específicamente, con el método jointCommand() se llama el servicio para mover cada motor y con el método  getJointValues() se crea un suscriptor al tópico joint_states para acceder a las posiciones de cada motor.
 
 
 
