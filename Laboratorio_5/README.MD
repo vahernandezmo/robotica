@@ -139,6 +139,8 @@ https://github.com/vahernandezmo/robotica_lab/assets/14100413/0624308c-b366-4a86
 
 Para la interfaz de usuario se utilizó la librería PyQt5 de Python, con la cual se creó la interfaz mostrada en la siguiente figura:
 
+![Interfaz]('./Media/hmi.png')
+
 En esta se pueden evidenciar 7 secciones:
 
 1. El título y los nombres de los integrantes del grupo.
