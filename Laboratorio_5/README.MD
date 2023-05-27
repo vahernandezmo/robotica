@@ -38,7 +38,7 @@ A continuación se puede ver una imagen que indica lo mencionado
 Para el proceso de programar la cinematica inversa en python se definió la función a la cual le ingresa la posición x,y,z del efector final y retorna los valores articulares de las cuatro articulación del robot.
 
 Puede observar el codigo a continuación con los respectivos comentarios
- 
+ ```Python
 def InvKine(x,y,z):
 	#parametros geometricos del robot
        L0 = 40.0
@@ -98,9 +98,9 @@ def InvKine(x,y,z):
        t4=-t3-t2
        #retornar los valores articulares en grados respecto al home
        return (math.degrees(t1), math.degrees(t2), 		       math.degrees(t3),math.degrees(t4))
-
+```
 Como a la función le pasan posiciones x,y,z es conveniente diseñar una función que sea capaz de leer un archivo csv y encontrar dichas tuplas de numeros por renglones. Para esto se presenta la siguiente función.
-
+```Python
 def leer_parejas_csv(nombre_archivo):
     parejas = []
     print(nombre_archivo)
@@ -111,21 +111,19 @@ def leer_parejas_csv(nombre_archivo):
             pareja = (float(x)*10, float(y)*10,float(z)*10)
             parejas.append(pareja)
     return parejas
-
+```
 En esta función se puede visualizar que se realizan parejas x,y,z leyendo un determinado archivo csv. El factor de 10 esta relacionado con la conversión de unidades de cm a mm.
 
 Finalmente conviene definir un metodo que permita para un determinado nombre de archivo csv se lean las tuplas de tres valores agregandolas a una lista y se pasen una a una por la función de cinematica inversa para obtener ahora una lista con las posiciones articulares correspondientes a cada punto leido del archivo .csv
-
+```Python
 		nombre_archivo = 'Archivo.csv'
                 puntos = leer_parejas_csv(nombre_archivo)
                 q_articulares=[]
                 for punto in puntos:
                     q=InvKine(punto[0],punto[1],punto[2])
                     q_articulares.append(q)
-      
+```
 De esta forma en q_articulares podermos ver como se almacena para un determinado archivo las posiciones articulares que debe seguir el robot para seguir una trayectoria.
-
-
 
 https://github.com/vahernandezmo/robotica_lab/assets/14100413/748f0e94-0dd0-49c2-9bf4-d824832a4bf8
 
@@ -143,13 +141,13 @@ Para la interfaz de usuario se utilizó la librería PyQt5 de Python, con la cua
 
 En esta se pueden evidenciar 7 secciones:
 
-1. El título y los nombres de los integrantes del grupo.
-2. Una sección donde se le indica al usuario lo que está ocurriendo en el momento
+1. El título y los nombres de los integrantes del grupo
+2. Una sección donde se le indica al usuario el estado de la herramienta y otras advertencias
 3. Una sección donde se indican la posición en grados de cada una de las juntas en la posición actual
 4. Una sección donde se indica el tiempo que demora cada rutina en ejecutarse
 5. Una sección donde se indican las 5 rutinas que el usuario puede elegir: cargar la herramienta, dibujar alguna de las tres figuras o descargar la herramienta
-6. Una sección donde se muestra una imagen correspondiente a la figura que se está dibujando.
-7. Y por último un botón de parada de emergencia.
+6. Una sección donde se muestra una imagen correspondiente a la figura que se está dibujando
+7. Un botón de parada de emergencia
 
 Para conectar la interfaz con el movimiento del robot, se creo una clase ```Robot()``` en el script ```moveRobot.py``` en la que se tienen métodos para llamar a los servicios y suscriptores necesarios para mover el robot, métodos para calcular la cinemática inversa y métodos para ejecutar las rutinas del robot.
 
