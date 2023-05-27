@@ -143,7 +143,7 @@ En esta se pueden evidenciar 7 secciones:
 
 Para conectar la interfaz con el movimiento del robot, se creo una clase ```Robot()``` en el script ```moveRobot.py``` en la que se tienen métodos para llamar a los servicios y suscriptores necesarios para mover el robot, métodos para calcular la cinemática inversa y métodos para ejecutar las rutinas del robot.
 
-Usando la función ```InvKine()``` se obtienen los valores de cada junta para un conjunto de puntos definidos, los cuales varían dependiendo de la rutina a ejecutar. Con las funciones ```draw()```, ```pickMarker()``` y ```goHome``` se realizan tanto las rutinas de dibujo de las diferentes figuras, como el movimiento de carga y descarga del marcador, así como también el movimiento del robot al home.
+Usando la función ```InvKine()``` se obtienen los valores de cada junta para un conjunto de puntos definidos, los cuales varían dependiendo de la rutina a ejecutar. Con las funciones ```draw()```, ```pickMarker()``` y ```goHome()``` se realizan tanto las rutinas de dibujo de las diferentes figuras, como el movimiento de carga y descarga del marcador, así como también el movimiento del robot al home.
 
 Si el usuario escoge alguna rutina pero no ha hecho el proceso de carga de la herramienta, la interfaz no permite realizar el movimiento del robot y da una indicación al usuario:
 
