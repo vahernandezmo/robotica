@@ -207,7 +207,7 @@ class MainApp(QWidget):
             self.timeLabel.setText(self.time)
             self.isToolUp = True
             self.getJointValues()
-            
+
         elif pose == 'Espacio de Trabajo':
             if self.isToolUp:
                 start_time = time.time()
@@ -229,7 +229,7 @@ class MainApp(QWidget):
                 self.timeLabel.setText(self.time)
                 self.getJointValues()
             else:
-                self.statusLabel.setText("\nNNo se puede realizar la acción hasta cargar la herramienta\n")
+                self.statusLabel.setText("\nNo se puede realizar la acción hasta cargar la herramienta\n")
         elif pose == 'Dibujo de Cara':
             if self.isToolUp:
                 start_time = time.time()
