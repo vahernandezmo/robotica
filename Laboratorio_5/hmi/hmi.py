@@ -22,6 +22,7 @@ class MainApp(QWidget):
         self.joint3Value = 0.0
         self.joint4Value = 0.0
         self.isToolUp = False
+        self.isLabelUpdated = False
         self.state_default_style = "background:#FCAF58; color: #000000;font-size:16px; font-family:calibri; font-weight:bold"
         self.status_text = """
         Herramienta Descargada
@@ -183,75 +184,90 @@ class MainApp(QWidget):
             #self.imageLabel.setPixmap(QPixmap(self.image)) 
             self.statusLabel.clear()
             self.statusLabel.setText("\nHerramienta Cargada\n")
-            self.statusLayout.addWidget(self.statusLabel)
+            self.isLabelUpdated = True
         elif pose == 'Espacio de Trabajo':
             self.imageLabel.setPixmap(QPixmap('images/workspace.png'))
             self.statusLabel.setText("\nEspacio de Trabajo\n")
+            self.isLabelUpdated = True
         elif pose == 'Dibujo de Iniciales':
             self.imageLabel.setPixmap(QPixmap('images/initials.png'))
             self.statusLabel.setText("\nIniciales\n")
+            self.isLabelUpdated = True
         elif pose == 'Dibujo de Cara':
             self.imageLabel.setPixmap(QPixmap('images/face.png'))
             self.statusLabel.setText("\nCara\n")
+            self.isLabelUpdated = True
         elif pose == 'Descarga de la Herramienta':
             #self.imageLabel.setPixmap(QPixmap('images/pose4.png'))
             self.statusLabel.setText("Herramienta Descargada")
+            self.isLabelUpdated = True
 
     def move_robot(self, pose):
         if pose == 'Cargar Herramienta':
+            if self.isLabelUpdated:
             #self.imageLabel.setPixmap(QPixmap(self.image)) 
-            start_time = time.time()
-            self.robot.pickMarker()
-            finish_time = time.time()
-            self.time = str(self.getTime(start_time, finish_time))
-            self.timeLabel.setText(self.time)
-            self.isToolUp = True
-            self.getJointValues()
+                start_time = time.time()
+                self.robot.pickMarker()
+                finish_time = time.time()
+                self.time = str(self.getTime(start_time, finish_time))
+                self.timeLabel.setText(self.time)
+                self.isToolUp = True
+                self.getJointValues()
+            self.isLabelUpdated = False
 
         elif pose == 'Espacio de Trabajo':
-            if self.isToolUp:
-                start_time = time.time()
-                self.robot.draw("Arc_interno.csv")
-                self.robot.draw('Arc_externo.csv')
-                finish_time = time.time()
-                self.time = str(self.getTime(start_time, finish_time))
-                self.timeLabel.setText(self.time)
-                self.getJointValues()
-            else:
-                self.statusLabel.setText("\nNo se puede realizar la acción hasta cargar la herramienta\n")
+            if self.isLabelUpdated:
+                if self.isToolUp:
+                    start_time = time.time()
+                    self.robot.draw("Arc_interno.csv")
+                    self.robot.draw('Arc_externo.csv')
+                    finish_time = time.time()
+                    self.time = str(self.getTime(start_time, finish_time))
+                    self.timeLabel.setText(self.time)
+                    self.getJointValues()
+                else:
+                    self.statusLabel.setText("\nNo se puede realizar la acción hasta cargar la herramienta\n")
+                self.isLabelUpdated = False
             
         elif pose == 'Dibujo de Iniciales':
-            if self.isToolUp:
-                start_time = time.time()
-                self.robot.draw("Letras.csv")
-                finish_time = time.time()
-                self.time = str(self.getTime(start_time, finish_time))
-                self.timeLabel.setText(self.time)
-                self.getJointValues()
-            else:
-                self.statusLabel.setText("\nNo se puede realizar la acción hasta cargar la herramienta\n")
+            if self.isLabelUpdated:
+                if self.isToolUp:
+                    start_time = time.time()
+                    self.robot.draw("Letras.csv")
+                    finish_time = time.time()
+                    self.time = str(self.getTime(start_time, finish_time))
+                    self.timeLabel.setText(self.time)
+                    self.getJointValues()
+                else:
+                    self.statusLabel.setText("\nNo se puede realizar la acción hasta cargar la herramienta\n")
+                self.isLabelUpdated = False
+
         elif pose == 'Dibujo de Cara':
-            if self.isToolUp:
-                start_time = time.time()
-                self.robot.draw('Cara2.csv')
-                finish_time = time.time()
-                self.time = str(self.getTime(start_time, finish_time))
-                self.timeLabel.setText(self.time)
-                self.getJointValues()
-            else:
-                self.statusLabel.setText("\nNo se puede realizar la acción hasta cargar la herramienta\n")
+            if self.isLabelUpdated:
+                if self.isToolUp:
+                    start_time = time.time()
+                    self.robot.draw('Cara2.csv')
+                    finish_time = time.time()
+                    self.time = str(self.getTime(start_time, finish_time))
+                    self.timeLabel.setText(self.time)
+                    self.getJointValues()
+                else:
+                    self.statusLabel.setText("\nNo se puede realizar la acción hasta cargar la herramienta\n")
+                self.isLabelUpdated = False
         elif pose == 'Descarga de la Herramienta':
             #self.imageLabel.setPixmap(QPixmap('images/pose4.png'))
-            if self.isToolUp:
-                start_time = time.time()
-                self.robot.pickMarker(False)
-                finish_time = time.time()
-                self.time = str(self.getTime(start_time, finish_time))
-                self.isToolUp = False
-                self.timeLabel.setText(self.time)
-                self.getJointValues()
-            else:
-                self.statusLabel.setText("\nNo se puede realizar la acción. Primero debe cargar la herramienta\n")
+            if self.isLabelUpdated:
+                if self.isToolUp:
+                    start_time = time.time()
+                    self.robot.pickMarker(False)
+                    finish_time = time.time()
+                    self.time = str(self.getTime(start_time, finish_time))
+                    self.isToolUp = False
+                    self.timeLabel.setText(self.time)
+                    self.getJointValues()
+                else:
+                    self.statusLabel.setText("\nNo se puede realizar la acción. Primero debe cargar la herramienta\n")
+                self.isLabelUpdated = False
 
     def getPose(self):
         return self.pose
