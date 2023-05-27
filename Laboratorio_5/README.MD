@@ -135,6 +135,10 @@ https://github.com/vahernandezmo/robotica_lab/assets/14100413/748f0e94-0dd0-49c2
 
 https://github.com/vahernandezmo/robotica_lab/assets/14100413/0624308c-b366-4a86-83d9-52057ec672d7
 
+## Interacción con el usuario
+
+
+
 
     
 
