@@ -5,6 +5,7 @@ from PyQt5.QtCore import *
 from PyQt5.QtGui import *
 from PyQt5.QtWidgets import QWidget
 from moveRobot import Robot
+import time
 
 class MainApp(QWidget):
     def __init__(self, parent = None, *args):
@@ -31,7 +32,7 @@ class MainApp(QWidget):
         Robótica - Laboratorio 5
         Valentina Hernández - Felipe Gutierrez - Manuel Rojas
         """
-
+        self.time = "0.0"
         width = self.frameGeometry().width()
         height = self.frameGeometry().height()
         #self.widget = QWidget(self)
@@ -57,17 +58,17 @@ class MainApp(QWidget):
         middleLayout = QHBoxLayout()
         middleLayout.setSpacing(15)
         leftLayout  = QVBoxLayout()
-
+        rightLayout = QVBoxLayout()
         topLayout = QVBoxLayout()
         topLayout.addWidget(label)
         #topLayout.addWidget(names_label)
 
-        statusLayout = QVBoxLayout()
+        self.statusLayout = QVBoxLayout()
         self.statusLabel = QLabel(self.status_text, self)
         self.statusLabel.setStyleSheet(self.state_default_style)
         self.statusLabel.setAlignment(Qt.AlignCenter)
         #statusLayout.addSpacerItem(QSpacerItem(int(0.1*width), int(0.1*height)))
-        statusLayout.addWidget(self.statusLabel)
+        self.statusLayout.addWidget(self.statusLabel)
         #statusLayout.addSpacerItem(QSpacerItem(int(0.1*width), int(0.1*height)))
 
         pose1 = self.createRadioButton("Cargar Herramienta", False)
@@ -126,15 +127,26 @@ class MainApp(QWidget):
         stopLayout.addWidget(self.stopButton)
         stopLayout.addSpacerItem(QSpacerItem(int(0.2*width), int(0.2*height)))
         
-        
+        timeLayout = QVBoxLayout()
+        TimeLabel = QLabel("Tiempo en completar la rutina: ")
+        TimeLabel.setStyleSheet("font-size:16px; font-weight:bold;")
+        self.timeLabel = QLabel(self.time)
+        self.timeLabel.setStyleSheet("font-size:15px;")
+        timeLayout.addWidget(TimeLabel)
+        timeLayout.addWidget(self.timeLabel)
+
         leftLayout.addLayout(jointsLayout)
         leftLayout.addLayout(optionsLayout)
         
+        rightLayout.addLayout(timeLayout)
+        rightLayout.addLayout(self.imageLayout)
+        
+
         middleLayout.addLayout(leftLayout)
-        middleLayout.addLayout(self.imageLayout)
+        middleLayout.addLayout(rightLayout)
 
         outerLayout.addLayout(topLayout)
-        outerLayout.addLayout(statusLayout)
+        outerLayout.addLayout(self.statusLayout)
         outerLayout.addLayout(middleLayout)
         outerLayout.addLayout(stopLayout)
         outerLayout.addStretch()
@@ -156,37 +168,70 @@ class MainApp(QWidget):
     def slot(self, value):
         radioButton = self.sender()
         if radioButton.isChecked():
-            self.pose = radioButton.text()
-            self.setValues()
+            pose = radioButton.text()
+            self.setValues(pose)
+            time.sleep(0.1)
+            self.move_robot(pose)
     def stop_robot(self):
         print("Stopping robot")
-    def setValues(self):
-        if self.pose == 'Cargar Herramienta':
-            #self.imageLabel.setPixmap(QPixmap(self.image))
-            self.statusLabel.setTExt("Cargando Herramienta")
-            self.robot.pickMarker()
-            self.getJointValues()
-        elif self.pose == 'Espacio de Trabajo':
+    def setValues(self, pose):
+        if pose == 'Cargar Herramienta':
+            #self.imageLabel.setPixmap(QPixmap(self.image)) 
+            self.statusLabel.clear()
+            self.statusLabel.setText("\nHerramienta Cargada\n")
+            self.statusLayout.addWidget(self.statusLabel)
+        elif pose == 'Espacio de Trabajo':
             self.imageLabel.setPixmap(QPixmap('images/workspace.png'))
-            self.statusLabel.setTExt("Dibujando Espacio de Trabajo")
+            self.statusLabel.setText("\nEspacio de Trabajo\n")
+        elif pose == 'Dibujo de Iniciales':
+            self.imageLabel.setPixmap(QPixmap('images/initials.png'))
+            self.statusLabel.setText("\nIniciales\n")
+        elif pose == 'Dibujo de Cara':
+            self.imageLabel.setPixmap(QPixmap('images/face.png'))
+            self.statusLabel.setText("\nCara\n")
+        elif pose == 'Descarga de la Herramienta':
+            #self.imageLabel.setPixmap(QPixmap('images/pose4.png'))
+            self.statusLabel.setText("Herramienta Descargada")
+    def move_robot(self, pose):
+        if pose == 'Cargar Herramienta':
+            #self.imageLabel.setPixmap(QPixmap(self.image)) 
+            start_time = time.time()
+            self.robot.pickMarker()
+            finish_time = time.time()
+            self.time = str(self.getTime(start_time, finish_time))
+            self.timeLabel.setText(self.time)
+            self.getJointValues()
+        elif pose == 'Espacio de Trabajo':
+            start_time = time.time()
             self.robot.draw("Arc_interno.csv")
             self.robot.draw('Arc_externo.csv')
+            finish_time = time.time()
+            self.time = str(self.getTime(start_time, finish_time))
+            self.timeLabel.setText(self.time)
             self.getJointValues()
-        elif self.pose == 'Dibujo de Iniciales':
-            self.imageLabel.setPixmap(QPixmap('images/initials.png'))
-            self.statusLabel.setTExt("Dibujando Iniciales")
+        elif pose == 'Dibujo de Iniciales':
+            start_time = time.time()
             self.robot.draw("Letras.csv")
+            finish_time = time.time()
+            self.time = str(self.getTime(start_time, finish_time))
+            self.timeLabel.setText(self.time)
             self.getJointValues()
-        elif self.pose == 'Dibujo de Cara':
-            self.imageLabel.setPixmap(QPixmap('images/face.png'))
-            self.statusLabel.setTExt("Dibujando cara")
+        elif pose == 'Dibujo de Cara':
+            start_time = time.time()
             self.robot.draw('Cara2.csv')
+            finish_time = time.time()
+            self.time = str(self.getTime(start_time, finish_time))
+            self.timeLabel.setText(self.time)
             self.getJointValues()
-        elif self.pose == 'Descarga de la Herramienta':
+        elif pose == 'Descarga de la Herramienta':
             #self.imageLabel.setPixmap(QPixmap('images/pose4.png'))
-            self.statusLabel.setTExt("Descargando Herramienta")
+            start_time = time.time()
             self.robot.pickMarker(False)
+            finish_time = time.time()
+            self.time = str(self.getTime(start_time, finish_time))
+            self.timeLabel.setText(self.time)
             self.getJointValues()
+            
     
     def getPose(self):
         return self.pose
@@ -194,10 +239,12 @@ class MainApp(QWidget):
     def getJointValues(self, offset=80):
             self.joint1Label.setText(f"Joint1: {str(self.robot.getJointsValues()[0])}")
             self.joint2Label.setText(f"Joint2: {str(self.robot.getJointsValues()[1])}")
-            self.joint3Label.setText(f"Joint3: {str(round(self.robot.getJointsValues()[2]+offset))}")
+            self.joint3Label.setText(f"Joint3: {str(round(self.robot.getJointsValues()[2]))}")
             self.joint4Label.setText(f"Joint4: {str(self.robot.getJointsValues()[3])}")
+
     def getTime(self, start_time, end_time):
         t=end_time-start_time #Se restan tiempos de finalizado e inicio
+        t = round(t, 2)
         return t
 
 

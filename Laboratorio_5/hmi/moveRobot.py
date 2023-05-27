@@ -19,6 +19,7 @@ __status__ = "Test"
 
 class Robot():
     def __init__(self):
+
         self.jointValues = []
 
     def jointCommand(self, command, id_num, addr_name, value, time):
@@ -44,16 +45,16 @@ class Robot():
         t5 = self.ang2bit(t5)
 
         self.jointCommand('', 1, 'Goal_Position', 511+t1, 0.5)
-        time.sleep(ts)
-        self.jointCommand('', 2, 'Goal_Position', 511+t2, 0.5)
-        time.sleep(ts)
-        self.jointCommand('', 3, 'Goal_Position', 239+t3, 0.5)
-        time.sleep(ts)
+        #time.sleep(ts)
+        self.jointCommand('', 2, 'Goal_Position', 205+t2, 0.5)
+        #time.sleep(ts)
+        self.jointCommand('', 3, 'Goal_Position', 511+t3, 0.5)
+        #time.sleep(ts)
         self.jointCommand('', 4, 'Goal_Position', 511+t4, 0.5)
-        time.sleep(ts)
+        #time.sleep(ts)
         self.jointCommand('', 5, 'Goal_Position', 511+t5, 0.5)
         time.sleep(ts)
-
+        
     def moveRobot(self, valor):
         if valor == "Home":
             self.poseRobot(0, 0, 0, 0, 0)
@@ -177,6 +178,8 @@ class Robot():
             self.poseRobot(0, 0, 0, 0, 0)
 
     def goHome(self):
+        self.poseRobot(0,0,0,0,0)
+        time.sleep(0.1)
         self.poseRobot(0, 30, 0, 10, -105)
         time.sleep(1)
         self.poseRobot(0, 0, 0, 0, -105)
