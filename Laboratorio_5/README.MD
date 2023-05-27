@@ -126,5 +126,15 @@ Finalmente conviene definir un metodo que permita para un determinado nombre de 
 De esta forma en q_articulares podermos ver como se almacena para un determinado archivo las posiciones articulares que debe seguir el robot para seguir una trayectoria.
 
 
+
+https://github.com/vahernandezmo/robotica_lab/assets/14100413/748f0e94-0dd0-49c2-9bf4-d824832a4bf8
+
+![Dibujo1](https://github.com/vahernandezmo/robotica_lab/assets/14100413/715eaad4-681b-4dc0-b8f0-13a39cf907e3)
+
+![Dibujo2](https://github.com/vahernandezmo/robotica_lab/assets/14100413/b039e8aa-84d9-4851-b6c8-ece550053e8c)
+
+https://github.com/vahernandezmo/robotica_lab/assets/14100413/0624308c-b366-4a86-83d9-52057ec672d7
+
+
     
 
