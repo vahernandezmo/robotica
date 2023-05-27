@@ -149,7 +149,11 @@ En esta se pueden evidenciar 7 secciones:
 6. Una sección donde se muestra una imagen correspondiente a la figura que se está dibujando.
 7. Y por último un botón de parada de emergencia.
 
-Para conectar la interfaz con el movimiento del robot, se creo una clase ```Robot()``` en el script ```moveRobot.py``` en la que se tienen métodos para llamar a los servicios y suscriptores necesarios para mover el robot y obtener las posiciones de cada junta. Específicamente, con el método jointCommand() se llama el servicio para mover cada motor y con el método  getJointValues() se crea un suscriptor al tópico joint_states para acceder a las posiciones de cada motor.
+Para conectar la interfaz con el movimiento del robot, se creo una clase ```Robot()``` en el script ```moveRobot.py``` en la que se tienen métodos para llamar a los servicios y suscriptores necesarios para mover el robot, métodos para calcular la cinemática inversa y métodos para ejecutar las rutinas del robot.
+
+Usando la función ```InvKine()``` se obtienen los valores de cada junta para un conjunto de puntos definidos, los cuales varían dependiendo de la rutina a ejecutar. Con las funciones ```draw()```, ```pickMarker()``` y ```goHome``` se realizan tanto las rutinas de dibujo de las diferentes figuras, como el movimiento de carga y descarga del marcador, así como también el movimiento del robot al home.
+
+
 
 
 
