@@ -155,6 +155,9 @@ Para conectar la interfaz con el movimiento del robot, se creo una clase ```Robo
 
 Usando la función ```InvKine()``` se obtienen los valores de cada junta para un conjunto de puntos definidos, los cuales varían dependiendo de la rutina a ejecutar. Con las funciones ```draw()```, ```pickMarker()``` y ```goHome``` se realizan tanto las rutinas de dibujo de las diferentes figuras, como el movimiento de carga y descarga del marcador, así como también el movimiento del robot al home.
 
+Si el usuario escoge alguna rutina pero no ha hecho el proceso de carga de la herramienta, la interfaz no permite realizar el movimiento del robot y da una indicación al usuario:
+
+![Advertencia](./Media/hmi_blocked.png)
 
 
 
