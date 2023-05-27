@@ -176,7 +176,7 @@ class MainApp(QWidget):
             self.move_robot(pose)
 
     def stop_robot(self):
-        print("Stopping robot")
+        self.robot.stop()
 
     def setValues(self, pose):
         if pose == 'Cargar Herramienta':
@@ -242,14 +242,16 @@ class MainApp(QWidget):
                 self.statusLabel.setText("\nNo se puede realizar la acción hasta cargar la herramienta\n")
         elif pose == 'Descarga de la Herramienta':
             #self.imageLabel.setPixmap(QPixmap('images/pose4.png'))
-            start_time = time.time()
-            self.robot.pickMarker(False)
-            finish_time = time.time()
-            self.time = str(self.getTime(start_time, finish_time))
-            self.isToolUp = False
-            self.timeLabel.setText(self.time)
-            self.getJointValues()
-            
+            if self.isToolUp:
+                start_time = time.time()
+                self.robot.pickMarker(False)
+                finish_time = time.time()
+                self.time = str(self.getTime(start_time, finish_time))
+                self.isToolUp = False
+                self.timeLabel.setText(self.time)
+                self.getJointValues()
+            else:
+                self.statusLabel.setText("\nNo se puede realizar la acción. Primero debe cargar la herramienta\n")
 
     def getPose(self):
         return self.pose

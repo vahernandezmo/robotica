@@ -183,3 +183,6 @@ class Robot():
         self.poseRobot(0, 30, 0, 10, -105)
         time.sleep(1)
         self.poseRobot(0, 0, 0, 0, -105)
+
+    def stop(self):
+        raise rospy.ServiceException
