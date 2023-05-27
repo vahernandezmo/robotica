@@ -21,6 +21,7 @@ class MainApp(QWidget):
         self.joint2Value = 0.0
         self.joint3Value = 0.0
         self.joint4Value = 0.0
+        self.isToolUp = False
         self.state_default_style = "background:#FCAF58; color: #000000;font-size:16px; font-family:calibri; font-weight:bold"
         self.status_text = """
         Herramienta Descargada
@@ -36,6 +37,7 @@ class MainApp(QWidget):
         width = self.frameGeometry().width()
         height = self.frameGeometry().height()
         #self.widget = QWidget(self)
+
         
 
         label = QLabel(title, self)
@@ -155,7 +157,7 @@ class MainApp(QWidget):
         self.setLayout(outerLayout)
 
         self.robot = Robot()
-        self.robot.goHome()
+        #self.robot.goHome()
 
     def createRadioButton(self, label, checked):
         radiobutton = QRadioButton(self)
@@ -172,8 +174,10 @@ class MainApp(QWidget):
             self.setValues(pose)
             time.sleep(0.1)
             self.move_robot(pose)
+
     def stop_robot(self):
         print("Stopping robot")
+
     def setValues(self, pose):
         if pose == 'Cargar Herramienta':
             #self.imageLabel.setPixmap(QPixmap(self.image)) 
@@ -192,6 +196,7 @@ class MainApp(QWidget):
         elif pose == 'Descarga de la Herramienta':
             #self.imageLabel.setPixmap(QPixmap('images/pose4.png'))
             self.statusLabel.setText("Herramienta Descargada")
+
     def move_robot(self, pose):
         if pose == 'Cargar Herramienta':
             #self.imageLabel.setPixmap(QPixmap(self.image)) 
@@ -200,39 +205,52 @@ class MainApp(QWidget):
             finish_time = time.time()
             self.time = str(self.getTime(start_time, finish_time))
             self.timeLabel.setText(self.time)
+            self.isToolUp = True
             self.getJointValues()
+            
         elif pose == 'Espacio de Trabajo':
-            start_time = time.time()
-            self.robot.draw("Arc_interno.csv")
-            self.robot.draw('Arc_externo.csv')
-            finish_time = time.time()
-            self.time = str(self.getTime(start_time, finish_time))
-            self.timeLabel.setText(self.time)
-            self.getJointValues()
+            if self.isToolUp:
+                start_time = time.time()
+                self.robot.draw("Arc_interno.csv")
+                self.robot.draw('Arc_externo.csv')
+                finish_time = time.time()
+                self.time = str(self.getTime(start_time, finish_time))
+                self.timeLabel.setText(self.time)
+                self.getJointValues()
+            else:
+                self.statusLabel.setText("\nNo se puede realizar la acción hasta cargar la herramienta\n")
+            
         elif pose == 'Dibujo de Iniciales':
-            start_time = time.time()
-            self.robot.draw("Letras.csv")
-            finish_time = time.time()
-            self.time = str(self.getTime(start_time, finish_time))
-            self.timeLabel.setText(self.time)
-            self.getJointValues()
+            if self.isToolUp:
+                start_time = time.time()
+                self.robot.draw("Letras.csv")
+                finish_time = time.time()
+                self.time = str(self.getTime(start_time, finish_time))
+                self.timeLabel.setText(self.time)
+                self.getJointValues()
+            else:
+                self.statusLabel.setText("\nNNo se puede realizar la acción hasta cargar la herramienta\n")
         elif pose == 'Dibujo de Cara':
-            start_time = time.time()
-            self.robot.draw('Cara2.csv')
-            finish_time = time.time()
-            self.time = str(self.getTime(start_time, finish_time))
-            self.timeLabel.setText(self.time)
-            self.getJointValues()
+            if self.isToolUp:
+                start_time = time.time()
+                self.robot.draw('Cara2.csv')
+                finish_time = time.time()
+                self.time = str(self.getTime(start_time, finish_time))
+                self.timeLabel.setText(self.time)
+                self.getJointValues()
+            else:
+                self.statusLabel.setText("\nNo se puede realizar la acción hasta cargar la herramienta\n")
         elif pose == 'Descarga de la Herramienta':
             #self.imageLabel.setPixmap(QPixmap('images/pose4.png'))
             start_time = time.time()
             self.robot.pickMarker(False)
             finish_time = time.time()
             self.time = str(self.getTime(start_time, finish_time))
+            self.isToolUp = False
             self.timeLabel.setText(self.time)
             self.getJointValues()
             
-    
+
     def getPose(self):
         return self.pose
     
