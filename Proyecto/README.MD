@@ -27,5 +27,6 @@ A continuación pueden verse imagenes referentes a estas piezas, la banda transp
 ## Codigo en RAPID[Manuel]
 ## Comparación entre Operación Manual y Operación Automatizada[Valentina]
 ## Video de Presentación [Felipe]
+![signal_config](https://github.com/vahernandezmo/robotica_lab/assets/55969494/eb85da7a-1baf-4c3f-bdbe-1efebe1cb786)
 
 ## 
