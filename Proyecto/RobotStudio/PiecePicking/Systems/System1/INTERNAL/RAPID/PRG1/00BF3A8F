@@ -1,0 +1,220 @@
+MODULE Module1
+	CONST robtarget Target_10:=[[-0.541791285,31.542690631,157.927772118],[0.338220375,0.61994805,0.62152642,-0.339081557],[-1,1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_20:=[[-0.54180672,0.235098408,157.927793799],[0.499363871,0.499363893,0.500635292,-0.500635328],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_30:=[[-0.541814528,0.23509908,222.389598203],[0.499363884,0.49936382,0.500635317,-0.500635363],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_40:=[[0,0,400],[0.499363884,0.49936382,0.500635317,-0.500635363],[0,1,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_50:=[[-0.038127492,-0.000030739,145.519742619],[0.499363836,0.499363825,0.500635306,-0.500635416],[-1,2,-3,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_60:=[[0,70,160.52],[0.182019153,0.682470244,0.683552682,-0.184008491],[0,2,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_70:=[[605.229348481,0,514.125118395],[0.275637355,0,0.961261696,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_90:=[[204.199229947,-72.229383295,-619.023797732],[0.618449546,0.618449531,0.34281213,0.342812167],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_80:=[[-77.125218661,-72.22939491,-596.502903487],[0.618449548,0.618449544,0.342812142,0.342812128],[0,-1,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_50_2:=[[-0.038127492,-0.000030739,170.519742619],[0.182018295,0.682471059,0.683552878,-0.184005593],[-1,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_160:=[[605.229348481,0,514.125118395],[0.275637355,0,0.961261696,0],[0,0,0,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_130:=[[108.313469676,92.052338402,147.49758099],[0.444719526,0.257906476,0.743119571,0.428348101],[0,-2,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_110_2:=[[109,396.75,-47],[1,0,0,0],[0,2,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_110:=[[109,396.75,3],[1,0,0,0],[0,2,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_50_3_2:=[[0.216181367,29.999981348,245.519415627],[0.611593294,0.353103544,0.613150552,-0.354002726],[0,-3,2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_150:=[[0.216193734,29.999948387,175.359992959],[0.611593362,0.353103485,0.613150461,-0.354002825],[0,-2,1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_120_2:=[[109,136.25,-47],[1,0,0,0],[0,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_120:=[[109,136.25,3],[1,0,0,0],[0,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_170_2:=[[248,396.75,-47],[0.216439613,0,0,0.976296007],[0,2,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_170:=[[248,396.75,3],[0.216439613,0,0,0.976296007],[0,2,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_180_2:=[[248,136.25,-47],[0.707106781,0,0,0.707106781],[0,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_180:=[[248,136.25,3],[0.707106781,0,0,0.707106781],[0,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_190_2:=[[395,396.75,-47],[0.382683432,0,0,0.923879533],[0,2,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_190:=[[395,396.75,3],[0.382683432,0,0,0.923879533],[0,2,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_200_2:=[[395,136.25,-47],[0.707106781,0,0,0.707106781],[0,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_200:=[[395,136.25,3],[0.707106781,0,0,0.707106781],[0,1,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_60_2:=[[0,70,280.52],[0.182019153,0.682470244,0.683552682,-0.184008491],[0,-2,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_210:=[[108.31348361,92.052306653,267.497558788],[0.444719566,0.257906454,0.743119625,0.428347979],[0,-2,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+	CONST robtarget Target_220:=[[0,533,0],[1,0,0,0],[1,2,2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_250:=[[-188.843410439,317.985657737,282.635376599],[0.28601825,0.002111346,-0.703849705,-0.650218959],[0,1,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_230:=[[0.000068646,70.00001103,283.574285968],[0.182019117,0.682470266,0.683552671,-0.184008489],[0,2,-2,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    ! Constante de velocidad para la instrucción de movimiento lineal y articular
+    CONST  speeddata vel := v500; 
+    !***********************************************************
+    !
+    ! Module:  Module1
+    !
+    ! Description:
+    !   Código que describe el movimiento de un robot IRB140 el cual tiene como objetivo posicionar un balde desde un banda transportadora
+    !   hasta una posición central para luego ser llenado con tres piezas escogidas por el usuario y posteriormente llevado de nuevo 
+    !   hacía la banda transportadora
+    ! Author: maaro
+    !
+    ! Version: 1.0
+    !
+    !***********************************************************
+    
+    
+    !***********************************************************
+    !
+    ! Procedure main
+    !
+    !   En este punto se configuran cada una de las rutinas que va a ejecutar el robot. Par este caso en particular se empieza con el robot 
+    !   yendo a posición de home para luego ir por el balde, obtener las piezas 1, 2 y 3, y luego dejar el balde sobre la banda transportadora.
+    !   Por último regresa a posición de home.
+    !
+    !***********************************************************
+    PROC main()     
+        Go_Home;
+        Pick_Balde;
+        Pick1;
+        Pick2;
+        Pick3;
+        Leave_Balde;
+        Go_Home;
+    ENDPROC
+    ! Rutina para recoger el balde y dejarlo en el piso al frente del robot
+    PROC Pick_Balde()
+        ! Instrucción de movimiento articular con destino al Target_10 que se mueve con velocidad vel, definida al inicio del módulo
+        ! con un radio de holgura de 100 entre el punto actual y el punto siguiente, asociado a la herramienta TD_Hook y con un Target_10 asociado al Workobject_1 (banda transportadora)  
+        MoveJ Target_10,vel,z100,TD_Hook\WObj:=Workobject_1;
+        ! Instrucción de movimiento lineal con destino al Target_20 que se mueve con velocidad vel, definida al inicio del módulo
+        ! con un radio de holgura fine (la trama de la herramienta debe pasar sobre el Target definido con la orientación exacta), 
+        ! asociado a la herramienta TD_Hook y con un Target_10 asociado al Workobject_1 (banda transportadora)  
+        MoveL Target_20,vel,fine,TD_Hook\WObj:=Workobject_1;
+        ! Instrucción de activación de pulso de una salida digital para generar el comportamiento de vínculo entre el smartComponent Balde
+        ! y el robot. Se descomenta cuando se quiera activar en la simulación.
+        ! PulseDO att_Balde; 
+        ! Pone al robot en estado de espera por 0.5 segundos
+        WaitTime 0.5;
+        MoveL Target_30,v200,z100,TD_Hook\WObj:=Workobject_1;
+        MoveL Target_40,v200,fine,TD_Hook\WObj:=Workobject_Balde_Piso;
+        WaitTime 1;
+        MoveL Target_50,v200,fine,TD_Hook\WObj:=Workobject_Balde_Piso;
+        ! Instrucción de activación de pulso de una salida digital para generar el comportamiento de quitar el vínculo activo entre el smartComponent Balde
+        ! y el robot. Se descomenta cuando se quiera activar en la simulación.
+        !PulseDO det_Balde;
+        WaitTime 0.5;
+        MoveJ Target_50_2,v50,fine,TD_Hook\WObj:=Workobject_Balde_Piso;
+        MoveJ Target_60,vel,z10,TD_Hook\WObj:=Workobject_Balde_Piso;
+		MoveJ Target_230,vel,z5,TD_Hook\WObj:=Workobject_Balde_Piso;
+    ENDPROC
+    ! Rutina para recoger el balde del piso y dejarlo sobre la banda transportadora
+    PROC Leave_Balde()
+        MoveJ Target_60,vel,fine,TD_Hook\WObj:=Workobject_Balde_Piso;
+        MoveJ Target_50_2,v50,z10,TD_Hook\WObj:=Workobject_Balde_Piso;
+        MoveJ Target_50,v50,fine,TD_Hook\WObj:=Workobject_Balde_Piso;
+        !PulseDO att_Balde;
+        WaitTime 0.5;
+        MoveL Target_40,vel,z150,TD_Hook\WObj:=Workobject_Balde_Piso;
+        MoveL Target_30,vel,z100,TD_Hook\WObj:=Workobject_1;
+        MoveL Target_20,v100,fine,TD_Hook\WObj:=Workobject_1;
+        !PulseDO det_Balde;
+        WaitTime 0.5;
+        MoveL Target_10,vel,z100,TD_Hook\WObj:=Workobject_1;
+    ENDPROC
+    ! Rutina para retornar a la posición de home [0 0 0 0 0 0]
+    PROC Go_Home()
+        MoveJ Target_160,vel,z0,TD_SuctionPad\WObj:=wobj0;
+    ENDPROC
+    ! Rutina para recoger la primera pieza
+	PROC Pick1()
+	    MoveJ Target_250,vel,z5,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	    MoveJ Target_110_2,vel,z5,TD_SuctionPad\WObj:=Workobject_Est;
+        ! Activación de un pulso de la salida digital DO_02 que tiene como obejtivo poner en funcionamiento una electroválvula, encargada de la activación por presión negativa
+        ! de la sujeción de la pieza que utiliza una ventosa.
+        PulseDO DO_02;
+	    MoveL Target_110,v50,fine,TD_SuctionPad\WObj:=Workobject_Est;
+        ! Instrucción de activación de pulso de una salida digital para generar el comportamiento de vínculo entre el smartComponent Pieza1
+        ! y el robot. Se descomenta cuando se quiera activar en la simulación.
+	    !PulseDO att_Pieza2;
+	    WaitTime 1;
+	    MoveL Target_110_2,vel,z100,TD_SuctionPad\WObj:=Workobject_Est;
+	    MoveJ Target_50_3_2,vel,z5,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	    MoveL Target_150,vel,fine,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+        ! Instrucción de activación de pulso de una salida digital para generar el comportamiento de quitar el vínculo activo entre el smartComponent Pieza1
+        ! y el robot. Se descomenta cuando se quiera activar en la simulación.
+	    !PulseDO Det_Pieza2;
+        ! Activación de un pulso de la salida digital DO_01 que tiene como obejtivo poner en funcionamiento una electroválvula, encargada de la desactivación por presión negativa
+        ! de la sujeción de la pieza que utiliza una ventosa.
+        PulseDO DO_01;
+	    WaitTime 1;
+        MoveJ Target_50_3_2,vel,z5,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	ENDPROC
+    ! Rutina para recoger la segunda pieza
+	PROC Pick2()
+	    MoveJ Target_250,vel,z5,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	    MoveJ Target_120_2,vel,z5,TD_SuctionPad\WObj:=Workobject_Est;
+        PulseDO DO_02;
+	    MoveL Target_120,v50,fine,TD_SuctionPad\WObj:=Workobject_Est;
+	    !PulseDO att_Pieza1;
+	    WaitTime 1;
+	    MoveL Target_120_2,v50,z10,TD_SuctionPad\WObj:=Workobject_Est;
+	    MoveJ Target_50_3_2,vel,z50,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	    MoveL Target_150,v50,fine,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+        PulseDO DO_01;
+	    !PulseDO Det_Pieza1;
+	    WaitTime 1;
+        MoveJ Target_50_3_2,vel,z50,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	ENDPROC
+    ! Rutina para recoger la tercera pieza
+	PROC Pick3()
+	    MoveJ Target_250,vel,z5,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	    MoveJ Target_170_2,vel,z5,TD_SuctionPad\WObj:=Workobject_Est;	    
+        PulseDO DO_02;
+	    MoveL Target_170,v50,fine,TD_SuctionPad\WObj:=Workobject_Est;
+	    !PulseDO att_Pieza3;
+	    WaitTime 1;
+	    MoveL Target_170_2,v50,z10,TD_SuctionPad\WObj:=Workobject_Est;
+	    MoveJ Target_50_3_2,vel,z50,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	    MoveL Target_150,v50,fine,TD_SuctionPad\WObj:=Workobject_Balde_Piso;	    
+	    !PulseDO Det_Pieza3;
+        PulseDO DO_01;
+	    WaitTime 1;
+        MoveJ Target_50_3_2,vel,z50,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	ENDPROC
+    ! Rutina para recoger la cuarta pieza
+	PROC Pick4()
+	    MoveJ Target_250,vel,z5,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	    MoveJ Target_180_2,vel,z5,TD_SuctionPad\WObj:=Workobject_Est;	    
+        PulseDO DO_02;
+	    MoveL Target_180,v50,fine,TD_SuctionPad\WObj:=Workobject_Est;
+	    !PulseDO att_Pieza4;
+	    WaitTime 1;
+	    MoveL Target_180_2,v50,z10,TD_SuctionPad\WObj:=Workobject_Est;
+	    MoveJ Target_50_3_2,vel,z50,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	    MoveL Target_150,v50,fine,TD_SuctionPad\WObj:=Workobject_Balde_Piso;	    
+        PulseDO DO_01;
+	    !PulseDO Det_Pieza4;
+	    WaitTime 1;
+        MoveJ Target_50_3_2,vel,z50,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	ENDPROC
+    ! Rutina para recoger la quinta pieza
+	PROC Pick5()
+	    MoveJ Target_250,vel,z5,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	    MoveJ Target_190_2,vel,z5,TD_SuctionPad\WObj:=Workobject_Est;	    
+        PulseDO DO_02;
+	    MoveL Target_190,v50,fine,TD_SuctionPad\WObj:=Workobject_Est;
+	    !PulseDO att_Pieza5;
+	    WaitTime 1;
+	    MoveL Target_190_2,v50,z10,TD_SuctionPad\WObj:=Workobject_Est;
+	    MoveJ Target_50_3_2,vel,z50,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	    MoveL Target_150,v50,fine,TD_SuctionPad\WObj:=Workobject_Balde_Piso;	    
+        PulseDO DO_01;
+	    !PulseDO Det_Pieza5;
+	    WaitTime 1;
+        MoveJ Target_50_3_2,vel,z50,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	ENDPROC
+    ! Rutina para recoger la sexta pieza
+	PROC Pick6()
+	    MoveJ Target_250,vel,z5,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	    MoveJ Target_200_2,vel,z5,TD_SuctionPad\WObj:=Workobject_Est;	    
+        PulseDO DO_02;
+	    MoveL Target_200,v50,fine,TD_SuctionPad\WObj:=Workobject_Est;
+	    !PulseDO att_Pieza6;
+	    WaitTime 1;
+	    MoveL Target_200_2,v50,z10,TD_SuctionPad\WObj:=Workobject_Est;
+	    MoveJ Target_50_3_2,vel,z50,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	    MoveL Target_150,v50,fine,TD_SuctionPad\WObj:=Workobject_Balde_Piso;	    
+        PulseDO DO_01;
+	    !PulseDO Det_Pieza6;
+	    WaitTime 1;
+        MoveJ Target_50_3_2,vel,z50,TD_SuctionPad\WObj:=Workobject_Balde_Piso;
+	ENDPROC
+    ! Rutina que permite llegar al punto donde se definió el Workobject_Est asociado al estante para permitir su calibración
+	PROC Cali()
+	    MoveJ Target_220,v200,z5,TD_SuctionPad\WObj:=Workobject_Est;
+	ENDPROC
+ENDMODULE
