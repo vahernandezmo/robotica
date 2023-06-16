@@ -30,15 +30,18 @@ Para la implementación en el entorno de RobotStudio se tienen diversos componen
 Como primer paso se ubicaron cada uno de los componentes en lugares definidos por el equipo que tuvieran la condición de que se ubicaran dentro del espacio diestro del robot, posteriormente se definieron tres “WorkObjects” para tener una facilidad de configuración de posicionamiento de cada uno de los puntos por sobre los cuales iban a estar definidas las trayectorias. Estos corresponden a tres puntos (visibles en la imagen); el primero esta ubicado en una esquina de la banda transportadora; el segundo se encuentra a nivel del piso y que está asociada con la ubicación del balde en el piso; y el tercero que se ubica en una esquina de la estantería. Cada uno de estos “WorkObjects” esta vinculado a los modelados por lo que, si se desplazan adrede, estos se desplazaran con su respectiva pieza.
 La herramienta a ser usada se crea dentro del espacio de trabajo asociado a los mecanismos, en la imagen se observa que su nombre corresponde a “PF_Robotica”, esto se hace para que, de manera posterior, se le puedan asignar acciones dentro de las rutinas de los “SmartComponents”. Luego de esto es posible asociarla al brazo robótico para que, de manera automática, se ubique en el extremo del efector final.
 
-![RobotStudio](https://github.com/vahernandezmo/robotica_lab/assets/14100413/89225e0c-5084-49fd-b5bf-2b1522c1f75d)
+![RobotStudio](https://github.com/vahernandezmo/robotica_lab/assets/14100413/a702bcf6-5045-4412-a543-ec8d93bdaf95)
 
 Ya que varias de las piezas que componen al espacio de trabajo, van a estar interactuando una con otras, se configuran las propiedades físicas de cada una de ellas dependiendo del nivel de interacción que van a tener. Por ejemplo, el “Balde” es una pieza con un tipo de comportamiento físico dinámico, mientras que la “Banda” es de tipo fijo. Además de la definición del comportamiento físico, también se configuraron algunas piezas del entorno para que fueran asociadas como “SmartComponents”, con esto fue posible asignarles acciones de interacción tales como; ubicación de la pieza en una posición establecida ante el accionamiento de una entrada virtual al controlador o asociar el cambio de posición del componente con el movimiento hecho por el robot. A la derecha de la imagen se pueden visualizar algunas de las entradas y salidas digitales que permiten activar estos comportamientos, otras se encuentran dentro del mismo código RAPID.
 Finalmente se crean las trayectorias a partir de puntos definidos asociados a cada uno de los WorkObjects para el desarrollo de las rutinas que va a desempeñar el robot, para posteriormente ser sincronizados con el código en RAPID y ser simulados en el entorno virtual y programados en los robots del LABSiR.       
 A continuación, se presentan cuatro videos correspondientes a las cuatro rutinas que tiene que cumplir el manipulador en donde se toman cuatro piezas del estante al azar para ser llevadas dentro del balde.
 
 https://github.com/vahernandezmo/robotica_lab/assets/14100413/757da0cf-7143-4dbb-8f1d-cca71a1707f7
+
 https://github.com/vahernandezmo/robotica_lab/assets/14100413/859d00cb-b065-4559-8b13-86100bc24aee
+
 https://github.com/vahernandezmo/robotica_lab/assets/14100413/67a7f302-7c6a-4b91-9c3a-a1624d353f84
+
 https://github.com/vahernandezmo/robotica_lab/assets/14100413/9cb221b8-c924-4923-aa2b-dfc30d30dc7a
 
 ## Codigo en RAPID[Manuel]
