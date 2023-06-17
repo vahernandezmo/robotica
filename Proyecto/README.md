@@ -4,6 +4,8 @@
 * Manuel Rojas
 * Felipe Gutierrez
 * Valentina Hernandez
+## Video de Presentación
+[![Alt text](https://img.youtube.com/vi/NfBNyhuODVA/0.jpg)](https://www.youtube.com/watch?v=NfBNyhuODVA)
 
 ## Descripción de la solución [Valentina]
 ## Piezas de Alistamiento [Valentina]
@@ -15,6 +17,9 @@ El modelado tambien permitió alcanzar una mejor aproximación de la herramienta
 ![image](https://github.com/vahernandezmo/robotica_lab/assets/58895880/24b66ba0-d76f-4489-9e4d-f645a37d35bf)
 
 Este plano puede verse en detalle en la carpeta /Herramienta/Plano Ensamble Herramienta.pdf
+Tambien A continuación se muestra una imagen de la herramienta en la realidad
+![IMG3](https://github.com/vahernandezmo/robotica_lab/assets/58895880/cd19519e-3e74-40ec-be37-733aa7cf441e)
+
 
 ## Modelado de Estanteria y banda trnasportadora
 
