@@ -7,6 +7,12 @@
 ## Video de Presentación
 [![Alt text](https://img.youtube.com/vi/NfBNyhuODVA/0.jpg)](https://www.youtube.com/watch?v=NfBNyhuODVA)
 
+Los videos de cada una de las cuatro combinaciones se puede encontrar en la carpeta media y en cada una de las subcarpetas
+123
+456
+145
+632
+
 ## Descripción de la solución [Valentina]
 ## Piezas de Alistamiento [Valentina]
 ## Herramienta 
