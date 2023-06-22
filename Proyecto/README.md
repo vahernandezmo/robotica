@@ -29,11 +29,15 @@ Tambien A continuación se muestra una imagen de la herramienta en la realidad
 ## Piezas de Alistamiento 
 Dada la geometría de nuestra herramienta, se consideró que para obtener la mejor solución y evitar colisiones entre los elementos de trabajo, las piezas deberían ir de manera vertical con respecto a la estantería, tal y como se muestra en la figura. 
 
+![piezasEstanteria](./Media/piezas_estanteria.png)
+
 Las piezas se diseñaron de tal manera que la ventosa pudiera tomarlas sin ningún problema, es decir, las piezas debían ser figuras circunscritas en un círculo de 5 cm de diámetro. Se diseñaron seis piezas en total, las cuales se fabricaron a través de corte láser.
+
+![piezas](./Media/piezas.png)
 
 Dado el requerimiento de que las piezas se mantuvieran de pie en la estantería, se diseñó un soporte con el fin de mantener las piezas en la posición correcta (90° con respecto a la estantería).  Estos soportes se fabricaron mediante impresión 3D y se unieron a las piezas a través de pegamento.
 
-
+![soporte](./Media/soporte.png)
 
 
 ## Modelado de Estanteria y banda transportadora
