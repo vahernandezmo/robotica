@@ -24,7 +24,7 @@ El modelado tambien permitió alcanzar una mejor aproximación de la herramienta
 
 Este plano puede verse en detalle en la carpeta /Herramienta/Plano Ensamble Herramienta.pdf
 Tambien A continuación se muestra una imagen de la herramienta en la realidad
-![IMG3](https://github.com/vahernandezmo/robotica_lab/assets/58895880/cd19519e-3e74-40ec-be37-733aa7cf441e =300x)
+<img src="https://github.com/vahernandezmo/robotica_lab/assets/58895880/cd19519e-3e74-40ec-be37-733aa7cf441e" width="500)>
 
 ### Piezas de Alistamiento 
 Las piezas se diseñaron de tal manera que la ventosa pudiera tomarlas sin ningún problema, es decir, las piezas debían ser figuras circunscritas en un círculo de 5 cm de diámetro. Se diseñaron seis piezas en total, las cuales se fabricaron a través de corte láser.
