@@ -15,7 +15,7 @@ Los videos de cada una de las cuatro combinaciones se puede encontrar en la carp
 
 ## Descripción de la solución [Valentina]
 
-## Herramienta 
+### Herramienta 
 Para la realización de la herramienta se decidió reutilizar la herramienta fabricada para el Laboratorio 1 ya que se considero que con unas modificaciones sobre la pieza "Soporte", dentro de estas modificaciones esta la realización de un agujero en la zona posterior para poder ingresar el gancho y otro en la zona frontal inferior para sacar la terminal de la ventosa.
 Cada una de las modificaciones se modelo previamente y se verifico en el laboratorio junto con el robot ABB IRB 140 de tal forma que una vez realizados los cambios, la herramienta funcionara de manera correcta.
 El modelado tambien permitió alcanzar una mejor aproximación de la herramienta en RoboStudio y permitió reducir los tiempos de calibración de cada una de las tareas. El modelado se realizo en una carpeta conjunta del equipo de trabajo en el software Fusion 360 de Autodesk.
@@ -26,7 +26,7 @@ Este plano puede verse en detalle en la carpeta /Herramienta/Plano Ensamble Herr
 Tambien A continuación se muestra una imagen de la herramienta en la realidad
 ![IMG3](https://github.com/vahernandezmo/robotica_lab/assets/58895880/cd19519e-3e74-40ec-be37-733aa7cf441e)
 
-## Piezas de Alistamiento 
+### Piezas de Alistamiento 
 Las piezas se diseñaron de tal manera que la ventosa pudiera tomarlas sin ningún problema, es decir, las piezas debían ser figuras circunscritas en un círculo de 5 cm de diámetro. Se diseñaron seis piezas en total, las cuales se fabricaron a través de corte láser.
 
 ![piezas](./Media/piezas.png)
@@ -40,7 +40,7 @@ Con este requirimeinto en mente, se diseñó un soporte con el fin de mantener l
 ![soporte](./Media/soporte.png)
 
 
-## Modelado de Estanteria y banda transportadora
+### Modelado de Estanteria y banda transportadora
 
 Los modelados de estas dos piezas se realizaron a partir de las medidas tomadas en el laboratorio con un flexometro como instrumento de medidad con una presición de 1 mm. Estos permitieron la implementación posterior en RobotStudio.
 
@@ -297,8 +297,5 @@ MODULE Module1
 ENDMODULE
 ```
 
-## Comparación entre Operación Manual y Operación Automatizada[Valentina]
-## Video de Presentación [Felipe]
+## Comparación entre Operación Manual y Operación Automatizada
 
-
-## 
