@@ -15,11 +15,21 @@ Los vídeos de cada una de las cuatro combinaciones se puede encontrar en la car
 
 ## Descripción de la solución
 
-dfasd
+Se inició con la adaptación de la herramienta utilizada en el Laboratorio 1 para cumplir con los requisistos necesarios: la posibilidad de agregar el gancho para tomar el balde y la posibiliad de insertar la ventosa para tomar las piezas. Posteriormente, se diseñaron 6 piezas, teniendo como referencia el diámetro de la ventosa a utilizar para garantizar que pudiera tomarlas sin ningún problema. Estas piezas se fabricaron a través de corte láser.
+
+Dada la geometría de la herramienta, se decidió que la mejor forma de ubicar las piezas en la estantería era de forma vertical, de manera que al hacer el proceso de alistamiento, el robot no tuviera que maniobrar dentro de la estantería y así evitar colisiones que pudieran afectar la ubicación de alguno de los elementos dentro del espacio de trabajo. Para ello, se diseñaron unos soportes, posteriormente fabricados en impresión 3D, con los cuales las piezas podrían estar verticalmente (a 90° con respecto a la estantería) durante todo el proceso de alistamiento. Una vez hecho esto, se realizó el modelado de los demás elementos que inervienen en el proceso: la estantería y la banda transportadora. 
+
+Con todos los elementos modelados, se llevaron a Robot Studio, donde se ubicaron tal y como se ubicarían en el laboratorio. Para saber la ubicación de los elementos, se crearon tres work objects: la ubicación de la estantería, la ubicación del balde en el lugar de alistamiento y la ubicación del balde en la banda transportadora. 
+
+Luego, se programaron las rutinas del robot para tomar el balde, llevarlo hasta el lugar de alistamiento, las cuatro combinaciones requeridas, y posteriormente dejar el balde nuevamente en la banda transportadora. Se realizaron pruebas en el laboratorio para verificar las rutinas y realizar ajustes necesarios y además realizar una rutina de alistamiento manual, con el fin de compararlo con el automático.
+
+También fue necesario el uso de un circuito neumático con el cual se pudieran controlar a través de salidas digitales la activación del flujo de aire para la ventosa. Este proceso se realizó con los demás grupos que hicieron uso del Robot.
+
+Para finalizar, se ubicaron las piezas en la estantería y se probaron las 4 combinaciones diferentes. Se probó además, una variación de la velocidad con el fin de comparar los tiempos entre la rutina manual y rutinas con diferentes velocidades. 
 
 
 ### Herramienta 
-Para la realización de la herramienta se decidió reutilizar la herramienta fabricada para el Laboratorio 1 ya que se considero que con unas modificaciones sobre la pieza "Soporte", dentro de estas modificaciones esta la realización de un agujero en la zona posterior para poder ingresar el gancho y otro en la zona frontal inferior para sacar la terminal de la ventosa.
+Para la realización de la herramienta se decidió reutilizar la herramienta fabricada para el Laboratorio 1 ya que se considero que con unas modificaciones sobre la pieza "Soporte", serviría para el propósito del proyecto. Dentro de estas modificaciones esta la realización de un agujero en la zona posterior para poder ingresar el gancho y otro en la zona frontal inferior para sacar la terminal de la ventosa.
 Cada una de las modificaciones se modelo previamente y se verifico en el laboratorio junto con el robot ABB IRB 140 de tal forma que una vez realizados los cambios, la herramienta funcionara de manera correcta.
 El modelado tambien permitió alcanzar una mejor aproximación de la herramienta en RoboStudio y permitió reducir los tiempos de calibración de cada una de las tareas. El modelado se realizo en una carpeta conjunta del equipo de trabajo en el software Fusion 360 de Autodesk.
 
