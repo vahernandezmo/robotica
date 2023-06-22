@@ -4,7 +4,6 @@
 * Manuel Rojas
 * Felipe Gutierrez
 * Valentina Hernandez
-<br>
 ## Video de Presentación
 [![Alt text](https://img.youtube.com/vi/NfBNyhuODVA/0.jpg)](https://www.youtube.com/watch?v=NfBNyhuODVA)
 
