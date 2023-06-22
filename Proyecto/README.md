@@ -14,7 +14,7 @@ Los videos de cada una de las cuatro combinaciones se puede encontrar en la carp
 632
 
 ## Descripción de la solución [Valentina]
-## Piezas de Alistamiento [Valentina]
+
 ## Herramienta 
 Para la realización de la herramienta se decidió reutilizar la herramienta fabricada para el Laboratorio 1 ya que se considero que con unas modificaciones sobre la pieza "Soporte", dentro de estas modificaciones esta la realización de un agujero en la zona posterior para poder ingresar el gancho y otro en la zona frontal inferior para sacar la terminal de la ventosa.
 Cada una de las modificaciones se modelo previamente y se verifico en el laboratorio junto con el robot ABB IRB 140 de tal forma que una vez realizados los cambios, la herramienta funcionara de manera correcta.
@@ -26,8 +26,17 @@ Este plano puede verse en detalle en la carpeta /Herramienta/Plano Ensamble Herr
 Tambien A continuación se muestra una imagen de la herramienta en la realidad
 ![IMG3](https://github.com/vahernandezmo/robotica_lab/assets/58895880/cd19519e-3e74-40ec-be37-733aa7cf441e)
 
+## Piezas de Alistamiento 
+Dada la geometría de nuestra herramienta, se consideró que para obtener la mejor solución y evitar colisiones entre los elementos de trabajo, las piezas deberían ir de manera vertical con respecto a la estantería, tal y como se muestra en la figura. 
 
-## Modelado de Estanteria y banda trnasportadora
+Las piezas se diseñaron de tal manera que la ventosa pudiera tomarlas sin ningún problema, es decir, las piezas debían ser figuras circunscritas en un círculo de 5 cm de diámetro. Se diseñaron seis piezas en total, las cuales se fabricaron a través de corte láser.
+
+Dado el requerimiento de que las piezas se mantuvieran de pie en la estantería, se diseñó un soporte con el fin de mantener las piezas en la posición correcta (90° con respecto a la estantería).  Estos soportes se fabricaron mediante impresión 3D y se unieron a las piezas a través de pegamento.
+
+
+
+
+## Modelado de Estanteria y banda transportadora
 
 Los modelados de estas dos piezas se realizaron a partir de las medidas tomadas en el laboratorio con un flexometro como instrumento de medidad con una presición de 1 mm. Estos permitieron la implementación posterior en RobotStudio.
 
