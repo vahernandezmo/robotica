@@ -312,3 +312,9 @@ ENDMODULE
 
 ## Comparación entre Operación Manual y Operación Automatizada
 
+| Operación     | Tiempo |
+| ----------- | :-----------: |
+| Manual    | 37 s     |
+| Automático [200 mmm/s]   | 85 s       |
+| Automático [500 mmm/s]   | 60 s        |
+
