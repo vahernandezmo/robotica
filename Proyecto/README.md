@@ -4,16 +4,20 @@
 * Manuel Rojas
 * Felipe Gutierrez
 * Valentina Hernandez
+<br>
 ## Video de Presentación
 [![Alt text](https://img.youtube.com/vi/NfBNyhuODVA/0.jpg)](https://www.youtube.com/watch?v=NfBNyhuODVA)
 
-Los videos de cada una de las cuatro combinaciones se puede encontrar en la carpeta media y en cada una de las subcarpetas
-123
-456
-145
-632
+Los vídeos de cada una de las cuatro combinaciones se puede encontrar en la carpeta Media y en cada una de las subcarpetas
+- 123
+- 456
+- 145
+- 632
 
-## Descripción de la solución [Valentina]
+## Descripción de la solución
+
+dfasd
+
 
 ### Herramienta 
 Para la realización de la herramienta se decidió reutilizar la herramienta fabricada para el Laboratorio 1 ya que se considero que con unas modificaciones sobre la pieza "Soporte", dentro de estas modificaciones esta la realización de un agujero en la zona posterior para poder ingresar el gancho y otro en la zona frontal inferior para sacar la terminal de la ventosa.
@@ -22,9 +26,10 @@ El modelado tambien permitió alcanzar una mejor aproximación de la herramienta
 
 ![image](https://github.com/vahernandezmo/robotica_lab/assets/58895880/24b66ba0-d76f-4489-9e4d-f645a37d35bf)
 
-Este plano puede verse en detalle en la carpeta /Herramienta/Plano Ensamble Herramienta.pdf
-Tambien A continuación se muestra una imagen de la herramienta en la realidad
-<img src="https://github.com/vahernandezmo/robotica_lab/assets/58895880/cd19519e-3e74-40ec-be37-733aa7cf441e" width="500)>
+Este plano puede verse en detalle en la carpeta /Herramienta/Plano Ensamble Herramienta.pdf <br>
+Tambien a continuación se muestra una imagen de la herramienta en la realidad.
+<br>
+<img src="https://github.com/vahernandezmo/robotica_lab/assets/58895880/cd19519e-3e74-40ec-be37-733aa7cf441e" width="700">
 
 ### Piezas de Alistamiento 
 Las piezas se diseñaron de tal manera que la ventosa pudiera tomarlas sin ningún problema, es decir, las piezas debían ser figuras circunscritas en un círculo de 5 cm de diámetro. Se diseñaron seis piezas en total, las cuales se fabricaron a través de corte láser.
@@ -38,7 +43,6 @@ Dada la geometría de nuestra herramienta, se consideró que para obtener la mej
 Con este requirimeinto en mente, se diseñó un soporte con el fin de mantener las piezas en la posición correcta (90° con respecto a la estantería).  Estos soportes se fabricaron mediante impresión 3D y se unieron a las piezas a través de pegamento.
 
 ![soporte](./Media/soporte.png)
-
 
 ### Modelado de Estanteria y banda transportadora
 
