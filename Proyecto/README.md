@@ -319,7 +319,11 @@ MODULE Module1
 ENDMODULE
 ```
 
-## Comparación entre Operación Manual y Operación Automatizada
+## Operación Manual y Operación Automatizada
+
+En total se pudieron realizar dos pruebas de la operación automática a diferentes velocidades, estas dos pruebas corresponden a velocidades de 200 mm/s y 500 mm/s. 
+
+Los tiempos generales se muestran en la siguiente tabla:
 
 | Operación     | Tiempo |
 | ----------- | :-----------: |
@@ -327,3 +331,4 @@ ENDMODULE
 | Automático [200 mmm/s]   | 85 s       |
 | Automático [500 mmm/s]   | 60 s        |
 
+Como se puede observar, las pruebas realizadas en la operación automática, con las velocidades configuradas, no alcanzan el tiempo realizado de forma manual. Sin embargo, se puede observar que al aumentar la velocidad los tiempos de operación automático se acercan cada vez más al tiempo de operación manual, y que, en el caso de realizar más pruebas a mayor velocidad, se podría alcanzar e incluso superar dicho tiempo.
